@@ -963,31 +963,30 @@ class SelectConstructor {
       speed: 150
     }
     this.config = Object.assign(defaultConfig, props);
-    // CSS класи модуля
     this.selectClasses = {
-      classSelect: "select", // Головний блок
-      classSelectBody: "select__body", // Тіло селекту
-      classSelectTitle: "select__title", // Заголовок
-      classSelectValue: "select__value", // Значення у заголовку
-      classSelectLabel: "select__label", // Лабел
-      classSelectInput: "select__input", // Поле введення
-      classSelectText: "select__text", // Оболонка текстових даних
-      classSelectLink: "select__link", // Посилання в елементі
-      classSelectOptions: "select__options", // Випадаючий список
-      classSelectOptionsScroll: "select__scroll", // Оболонка при скролі
-      classSelectOption: "select__option", // Пункт
-      classSelectContent: "select__content", // Оболонка контенту в заголовку
-      classSelectRow: "select__row", // Ряд
-      classSelectData: "select__asset", // Додаткові дані
-      classSelectDisabled: "_select-disabled", // Заборонено
-      classSelectTag: "_select-tag", // Клас тега
-      classSelectOpen: "_select-open", // Список відкритий
-      classSelectActive: "_select-active", // Список вибрано
-      classSelectFocus: "_select-focus", // Список у фокусі
-      classSelectMultiple: "_select-multiple", // Мультивибір
-      classSelectCheckBox: "_select-checkbox", // Стиль чекбоксу
-      classSelectOptionSelected: "_select-selected", // Вибраний пункт
-      classSelectPseudoLabel: "_select-pseudo-label", // Псевдолейбл
+      classSelect: "select",
+      classSelectBody: "select__body",
+      classSelectTitle: "select__title",
+      classSelectValue: "select__value",
+      classSelectLabel: "select__label",
+      classSelectInput: "select__input",
+      classSelectText: "select__text",
+      classSelectLink: "select__link",
+      classSelectOptions: "select__options",
+      classSelectOptionsScroll: "select__scroll",
+      classSelectOption: "select__option",
+      classSelectContent: "select__content",
+      classSelectRow: "select__row",
+      classSelectData: "select__asset",
+      classSelectDisabled: "_select-disabled",
+      classSelectTag: "_select-tag",
+      classSelectOpen: "_select-open",
+      classSelectActive: "_select-active",
+      classSelectFocus: "_select-focus",
+      classSelectMultiple: "_select-multiple",
+      classSelectCheckBox: "_select-checkbox",
+      classSelectOptionSelected: "_select-selected",
+      classSelectPseudoLabel: "_select-pseudo-label",
     }
     this._this = this;
     if (this.config.init) {
@@ -1036,16 +1035,12 @@ class SelectConstructor {
     let selectItem = document.createElement("div");
     selectItem.classList.add(this.selectClasses.classSelect);
 
-    // Виводимо оболонку перед оригінальним селектом
     originalSelect.parentNode.insertBefore(selectItem, originalSelect);
 
-    // Поміщаємо оригінальний селект в оболонку
     selectItem.appendChild(originalSelect);
 
-    // Приховуємо оригінальний селект
     originalSelect.hidden = true;
 
-    // Привласнюємо унікальний ID
     index ? originalSelect.dataset.id = index : null;
 
     selectItem.insertAdjacentHTML('beforeend', `<div class="${this.selectClasses.classSelectBody}"><div hidden class="${this.selectClasses.classSelectOptions}"></div></div>`);
@@ -1636,6 +1631,98 @@ if (telephone) {
 }
 
 //========================================================================================================================================================
+
+function openSearch() {
+  if (document.documentElement.classList.contains('menu-open')) {
+    document.documentElement.classList.remove('menu-open');
+  }
+  document.documentElement.classList.add('search-open');
+}
+
+function closeSearch() {
+  document.documentElement.classList.remove('search-open');
+}
+
+const searchButtons = document.querySelectorAll('.button-search');
+if (searchButtons) {
+  searchButtons.forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.stopPropagation();
+
+      if (document.documentElement.classList.contains('menu-open')) {
+        document.documentElement.classList.remove('menu-open');
+      }
+
+      document.documentElement.classList.toggle('search-open');
+    });
+  });
+
+  document.addEventListener('click', function (event) {
+    const searchElement = document.querySelector('.header-search');
+
+    if (document.documentElement.classList.contains('search-open')) {
+      if (!event.target.closest('.button-search') &&
+        !event.target.closest('.header-search')) {
+        closeSearch();
+      }
+    }
+  });
+}
+
+const iconMenu = document.querySelector('.icon-menu');
+const headerBody = document.querySelector('.header-bottom__menu');
+const closeButton = document.querySelector('.header-bottom__close');
+
+if (iconMenu) {
+  iconMenu.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    if (document.documentElement.classList.contains('search-open')) {
+      document.documentElement.classList.remove('search-open');
+    }
+
+    document.documentElement.classList.toggle("menu-open");
+  });
+
+  if (closeButton) {
+    closeButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      document.documentElement.classList.remove("menu-open");
+    });
+  }
+
+  document.addEventListener('click', function (e) {
+    const isClickInsideHeaderBody = headerBody && headerBody.contains(e.target);
+    const isClickOnMenuIcon = e.target === iconMenu || iconMenu.contains(e.target);
+    const isClickOnCloseButton = closeButton && (e.target === closeButton || closeButton.contains(e.target));
+
+    if (!isClickInsideHeaderBody && !isClickOnMenuIcon && !isClickOnCloseButton) {
+      document.documentElement.classList.remove("menu-open");
+    }
+  });
+}
+
+//========================================================================================================================================================
+
+// Добавление к шапке при скролле
+const header = document.querySelector('.header');
+if (header) {
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 0) {
+      header.classList.add('_header-scroll');
+      document.documentElement.classList.add('header-scroll');
+    } else {
+      header.classList.remove('_header-scroll');
+      document.documentElement.classList.remove('header-scroll');
+    }
+  });
+}
+
+//========================================================================================================================================================
+
+
+
+//========================================================================================================================================================
 /*
 //Попап
 class Popup {
@@ -1934,72 +2021,6 @@ function safeInitMap(mapElement) {
   } catch (error) {
     console.error('Error initializing map:', error);
   }
-}
-
-//========================================================================================================================================================
-
-const searchButton = document.querySelector('.header-search__button');
-const searchBlock = document.querySelector('.header-search');
-const searchInput = document.querySelector('.header-search__input input');
-const searchClose = document.querySelector('.header-search__close');
-
-if (searchButton && searchBlock) {
-  searchButton.addEventListener('click', function () {
-    if (window.innerWidth >= 768) {
-      searchBlock.classList.toggle('active');
-    }
-  });
-
-  document.addEventListener('click', function (event) {
-    if (window.innerWidth >= 768) {
-      if (!searchBlock.contains(event.target)) {
-        searchBlock.classList.remove('active');
-      }
-    }
-  });
-}
-
-if (searchClose && searchInput) {
-  searchClose.addEventListener('click', function () {
-    searchInput.value = '';
-    searchInput.focus();
-  });
-}
-
-//========================================================================================================================================================
-
-const iconMenu = document.querySelector('.icon-menu');
-const headerBody = document.querySelector('.header__menu');
-
-if (iconMenu) {
-  iconMenu.addEventListener("click", function (e) {
-    e.stopPropagation();
-    document.documentElement.classList.toggle("menu-open");
-  });
-
-  document.addEventListener('click', function (e) {
-    const isClickInsideHeaderBody = headerBody && headerBody.contains(e.target);
-    const isClickOnMenuIcon = e.target === iconMenu || iconMenu.contains(e.target);
-    const isClickOnSearch = searchBlock && searchBlock.contains(e.target);
-
-    if (!isClickInsideHeaderBody && !isClickOnMenuIcon && !isClickOnSearch) {
-      document.documentElement.classList.remove("menu-open");
-    }
-  });
-}
-
-//========================================================================================================================================================
-
-// Добавление к шапке при скролле
-const header = document.querySelector('.header');
-if (header) {
-  window.addEventListener('scroll', function () {
-    if (window.scrollY > 0) {
-      header.classList.add('_header-scroll');
-    } else {
-      header.classList.remove('_header-scroll');
-    }
-  });
 }
 
 //========================================================================================================================================================
