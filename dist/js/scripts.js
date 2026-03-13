@@ -171,6 +171,11 @@ function formFieldsInit(options = { viewPass: true, autoHeight: false }) {
         targetElement.classList.remove('_form-focus');
         targetElement.parentElement.classList.remove('_form-focus');
       }
+      if (targetElement.value.trim()) {
+        targetElement.parentElement.classList.add('filled');
+      } else {
+        targetElement.parentElement.classList.remove('filled');
+      }
       targetElement.hasAttribute('data-validate') ? formValidate.validateInput(targetElement) : null;
     }
   });
@@ -281,6 +286,7 @@ let formValidate = {
     if (formRequiredItem.dataset.error) {
       formRequiredItem.parentElement.insertAdjacentHTML('beforeend', `<div class="form__error">${formRequiredItem.dataset.error}</div>`);
     }
+    formRequiredItem.parentElement.classList.remove('filled');
   },
   removeError(formRequiredItem) {
     formRequiredItem.classList.remove('_form-error');
@@ -292,10 +298,14 @@ let formValidate = {
   addSuccess(formRequiredItem) {
     formRequiredItem.classList.add('_form-success');
     formRequiredItem.parentElement.classList.add('_form-success');
+    if (formRequiredItem.value.trim()) {
+      formRequiredItem.parentElement.classList.add('filled');
+    }
   },
   removeSuccess(formRequiredItem) {
     formRequiredItem.classList.remove('_form-success');
     formRequiredItem.parentElement.classList.remove('_form-success');
+    formRequiredItem.parentElement.classList.remove('filled');
   },
   formClean(form) {
     form.reset();
@@ -1615,6 +1625,17 @@ if (filterIcons) {
 }
 
 //========================================================================================================================================================
+
+//Маска
+const telephone = document.querySelectorAll('.telephone');
+if (telephone) {
+  Inputmask({
+    "mask": "+7 (999) 999 - 99 - 99",
+    "showMaskOnHover": false,
+  }).mask(telephone);
+}
+
+//========================================================================================================================================================
 /*
 //Попап
 class Popup {
@@ -2282,14 +2303,7 @@ if (forms) {
 
 //========================================================================================================================================================
 
-//Маска
-const telephone = document.querySelectorAll('.telephone');
-if (telephone) {
-  Inputmask({
-    "mask": "+7 (999) 999 - 99 - 99",
-    "showMaskOnHover": false,
-  }).mask(telephone);
-}
+
 
 const dataElements = document.querySelectorAll('.data');
 if (dataElements.length) {

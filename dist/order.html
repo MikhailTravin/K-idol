@@ -29,6 +29,537 @@
 </header>-->
 			<main class="main">
 
+				<div class="block-order">
+					<div class="block-order__circle"></div>
+					<div class="container">
+						<div class="block-order__heading-complex">
+							<div class="breadcrumbs">
+								<ul>
+									<li>
+										<a href="#">
+											Главная
+											<svg aria-hidden="true" width="23" height="8">
+												<use xlink:href="img/sprite.svg#arrow2"></use>
+											</svg>
+										</a>
+									</li>
+									<li><span>Разное</span></li>
+								</ul>
+							</div>
+							<h2 class="title2">Оформление заказа</h2>
+						</div>
+						<form action="#" class="block-order__form">
+							<div class="block-order-left">
+								<div class="block-order-left__column column-address">
+									<div class="block-order-top top2">
+										<div class="block-order-top__titles">
+											<div class="block-order-top__icon1">
+												<img src="img/icons/location1.svg" alt="">
+											</div>
+											<div class="block-order-top__title">
+												Введите ваш населённый пункт
+											</div>
+										</div>
+									</div>
+									<div class="block-order-bottom">
+										<div class="block-order-bottom__inputs">
+											<div class="block-order-bottom__input">
+												<label for="location1">Местоположение<span>*</span></label>
+												<select name="form[]" class="select1">
+													<option value="1" selected>Москва, <span>Россия</span></option>
+													<option value="2">Пункт №2</option>
+													<option value="3">Пункт №3</option>
+													<option value="4">Пункт №4</option>
+												</select>
+											</div>
+											<div class="block-order-bottom__input">
+												<label for="index1">Почтовый индекс<span>*</span></label>
+												<input id="index1" data-required autocomplete="off" type="text" name="form[]" placeholder="" value="1122555">
+											</div>
+										</div>
+										<div class="block-order-bottom__text">
+											Выберите свой ГОРОД в списке. Если вы не нашли свой город, выберите "другое
+											местоположение",
+											а город впишите в поле "Город"
+										</div>
+									</div>
+								</div>
+								<div class="block-order-left__column column-methods">
+									<div class="block-order-methods">
+										<div class="block-order-methods__method">
+											<div class="block-order-top">
+												<div class="block-order-top__titles">
+													<div class="block-order-top__icon1">
+														<img src="img/icons/delivery1.svg" alt="">
+													</div>
+													<div class="block-order-top__title">
+														Способ доставки
+													</div>
+												</div>
+												<div class="block-order-top__icon2">
+													<svg aria-hidden="true" width="14" height="14">
+														<use xlink:href="img/sprite.svg#star1"></use>
+													</svg>
+												</div>
+											</div>
+											<div class="options options-delivery">
+												<label class="options__item">
+													<input hidden class="options__input" checked type="radio" value="1" name="option1">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">СДЭК</span> (Доставка курьером СДЭК по
+																Москве)
+															</span>
+															<span class="options__subtext">
+																<span class="options__text">
+																	<span class="fw">0 ₽ </span> 2 дня
+																</span>
+																<span class="options__text">
+																	Срок обработки заказа 1-3 рабочих дня
+																	<br>
+																	Товары из Кореи доставка ~ от 20 дней
+																</span>
+															</span>
+														</span>
+												</label>
+												<label class="options__item">
+													<input hidden class="options__input" type="radio" value="2" name="option1">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">СДЭК</span> (Доставка курьером СДЭК по
+																Москве)
+															</span>
+															<span class="options__subtext">
+																<span class="options__text">
+																	<span class="fw">0 ₽ </span> 2 дня
+																</span>
+																<span class="options__text">
+																	Срок обработки заказа 1-3 рабочих дня
+																</span>
+															</span>
+															<a href="./" class="btn">
+																Выбрать пункт выдачи
+															</a>
+														</span>
+												</label>
+												<label class="options__item">
+													<input hidden class="options__input" type="radio" value="3" name="option1">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">СДЭК</span> (Постамат СДЭК)
+															</span>
+															<span class="options__subtext">
+																<span class="options__text">
+																	<span class="fw">0 ₽ </span> 2 дня
+																</span>
+																<span class="options__text">
+																	Срок обработки заказа 1-3 рабочих дня
+																</span>
+															</span>
+														</span>
+												</label>
+												<label class="options__item">
+													<input hidden class="options__input" type="radio" value="4" name="option1">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr descr-image">
+															<span class="options__text">
+																<img src="img/icons/flag1.svg" alt="">
+																<span class="fw">Товары из Кореи ~ от 20 дней</span>
+															</span>
+															<span class="options__subtext">
+																<span class="options__text">
+																	<span class="fw">0 ₽ </span> от 20 дней
+																</span>
+															</span>
+														</span>
+												</label>
+											</div>
+										</div>
+										<div class="block-order-methods__method">
+											<div class="block-order-top">
+												<div class="block-order-top__titles">
+													<div class="block-order-top__icon1">
+														<img src="img/icons/payment1.svg" alt="">
+													</div>
+													<div class="block-order-top__title">
+														Способ оплаты
+													</div>
+												</div>
+												<div class="block-order-top__icon2">
+													<svg aria-hidden="true" width="14" height="14">
+														<use xlink:href="img/sprite.svg#star1"></use>
+													</svg>
+												</div>
+											</div>
+											<div class="options">
+												<label class="options__item">
+													<input hidden class="options__input" checked type="radio" value="1" name="option2">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">СБП</span>
+															</span>
+														</span>
+												</label>
+												<label class="options__item">
+													<input hidden class="options__input" type="radio" value="2" name="option2">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">Оплата картой</span>
+															</span>
+														</span>
+												</label>
+												<label class="options__item">
+													<input hidden class="options__input" type="radio" value="3" name="option2">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">Долями - оплата покупок частями</span>
+															</span>
+														</span>
+												</label>
+												<label class="options__item">
+													<input hidden class="options__input" type="radio" value="4" name="option2">
+													<span class="options__label">
+														<span class="options__icon"></span>
+														<span class="options__descr">
+															<span class="options__text">
+																<span class="fw">Бонусами</span>
+															</span>
+														</span>
+												</label>
+											</div>
+											<div class="block-order-methods__text">
+												<p>Разделим оплату на 4 части.</p>
+												<p>
+													Покупка за 25% цены. Оставшаяся часть будет автоматически списываться по
+													25%
+													суммы покупки каждые две недели. Это не кредит,
+													вы заплатите ровно сумму покупки. Оплата заказа быть произведена в
+													течение
+													трех часов с момента оформления.
+												</p>
+												<p>
+													В противном случае заказ будет
+													автоматически отменен.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="block-order-left__column column-other column-contacts">
+									<div class="block-order-top">
+										<div class="block-order-top__titles">
+											<div class="block-order-top__icon1">
+												<img src="img/icons/person2.svg" alt="">
+											</div>
+											<div class="block-order-top__title">
+												Контактные данные
+											</div>
+										</div>
+									</div>
+									<div class="block-order-bottom">
+										<div class="block-order-bottom__inputs">
+											<div class="block-order-bottom__input">
+												<input data-required autocomplete="off" type="text" name="form[]" placeholder="">
+												<div class="placeholder">
+													ФИО <span>(полностью)</span>
+												</div>
+											</div>
+											<div class="block-order-bottom__input">
+												<input data-required="email" autocomplete="off" type="text" name="form[]" placeholder="E - mail">
+											</div>
+											<div class="block-order-bottom__input">
+												<input data-required autocomplete="off" type="text" name="form[]" placeholder="+ 7 ( ___ ) - ___ - __ - __" class="telephone">
+											</div>
+											<div class="block-order-bottom__inputs2">
+												<div class="block-order-bottom__input">
+													<input data-required autocomplete="off" type="text" name="form[]" placeholder="Город">
+												</div>
+												<div class="promocode">
+													<input autocomplete="off" type="text" name="form[]" placeholder="Почтовый индекс">
+													<a href="./" class="promocode__button">
+														Показать на карте
+													</a>
+												</div>
+											</div>
+											<div class="block-order-bottom__input">
+												<input data-required autocomplete="off" type="text" name="form[]" placeholder="Улица">
+											</div>
+											<div class="block-order-bottom__input">
+												<input data-required autocomplete="off" type="text" name="form[]" placeholder="Укажите номер дома / Квартира / Корпус / Офис">
+											</div>
+											<div class="block-order-bottom__input">
+												<textarea data-required placeholder="Комментарии к заказу (укажие любую полезную для нас информацию, включая ваш тип кожи):"></textarea>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="block-order-left__column column-other column-products">
+									<div class="block-order-top top2">
+										<div class="block-order-top__titles">
+											<div class="block-order-top__icon1">
+												<img src="img/icons/cart2.svg" alt="">
+											</div>
+											<div class="block-order-top__title">
+												Товары в заказе
+											</div>
+										</div>
+									</div>
+									<div class="block-order-products">
+										<div class="block-order-products__product">
+											<a href="./" class="block-order-products__images">
+												<div class="block-order-products__image">
+													<img loading="lazy" src="img/products/image15.webp" alt="">
+												</div>
+												<div class="block-order-products__title mob">
+													Двухфазная разглаживающая сыворотка с волюфилином
+													Derma Factory Volufiline 5% Blending Serum
+												</div>
+											</a>
+											<div class="block-order-products__item">
+												<a href="./" class="block-order-products__title desc">
+													Двухфазная разглаживающая сыворотка с волюфилином
+													Derma Factory Volufiline 5% Blending Serum
+												</a>
+												<ul>
+													<li>
+														<div class="block-order-products__name">Скидка</div>
+														<div class="block-order-products__value">0 %</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">Цена (шт)</div>
+														<div class="block-order-products__value">1400 ₽</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">
+															<span class="desc">Количество</span>
+															<span class="mob">Кол-во</span>
+														</div>
+														<div class="block-order-products__value">1</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">Сумма</div>
+														<div class="block-order-products__value">1400 ₽</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="block-order-products__product">
+											<a href="./" class="block-order-products__images">
+												<div class="block-order-products__image">
+													<img loading="lazy" src="img/products/image8.webp" alt="">
+												</div>
+												<div class="block-order-products__title mob">
+													Двухфазная разглаживающая сыворотка с волюфилином
+													Derma Factory Volufiline 5% Blending Serum
+												</div>
+											</a>
+											<div class="block-order-products__item">
+												<a href="./" class="block-order-products__title desc">
+													Двухфазная разглаживающая сыворотка с волюфилином
+													Derma Factory Volufiline 5% Blending Serum
+												</a>
+												<ul>
+													<li>
+														<div class="block-order-products__name">Скидка</div>
+														<div class="block-order-products__value">0 %</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">Цена (шт)</div>
+														<div class="block-order-products__value">1400 ₽</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">
+															<span class="desc">Количество</span>
+															<span class="mob">Кол-во</span>
+														</div>
+														<div class="block-order-products__value">1</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">Сумма</div>
+														<div class="block-order-products__value">1400 ₽</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="block-order-products__product">
+											<a href="./" class="block-order-products__images">
+												<div class="block-order-products__image">
+													<img loading="lazy" src="img/products/image11.webp" alt="">
+												</div>
+												<div class="block-order-products__title mob">
+													Двухфазная разглаживающая сыворотка с волюфилином
+													Derma Factory Volufiline 5% Blending Serum
+												</div>
+											</a>
+											<div class="block-order-products__item">
+												<a href="./" class="block-order-products__title desc">
+													Двухфазная разглаживающая сыворотка с волюфилином
+													Derma Factory Volufiline 5% Blending Serum
+												</a>
+												<ul>
+													<li>
+														<div class="block-order-products__name">Скидка</div>
+														<div class="block-order-products__value">0 %</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">Цена (шт)</div>
+														<div class="block-order-products__value">1400 ₽</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">
+															<span class="desc">Количество</span>
+															<span class="mob">Кол-во</span>
+														</div>
+														<div class="block-order-products__value">1</div>
+													</li>
+													<li>
+														<div class="block-order-products__name">Сумма</div>
+														<div class="block-order-products__value">1400 ₽</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="block-order-left__buttons">
+									<div class="block-order-left__switch">
+										<label class="toggle-switch">
+											<input type="checkbox">
+											<span class="toggle-switch__background">
+												<span class="toggle-switch__handle"></span>
+											</span>
+										</label>
+										<div class="block-order-left__switch-text">
+											Я даю согласие на <a href="./">обработку персональных данных</a> в соответствии
+											с <a href="./">политикой о
+												конфиденциальности</a>
+										</div>
+									</div>
+									<button type="submit" class="btn">
+										<span>Оформить заказ</span>
+									</button>
+								</div>
+							</div>
+							<div class="block-order-detail">
+								<div class="block-order-detail__sticky">
+									<div class="block-order-detail__item">
+										<div class="block-order-detail__title">
+											Ваш заказ
+										</div>
+										<ul>
+											<li>
+												<div class="block-order-detail__name">Товаров на:</div>
+												<div class="block-order-detail__value">8 250 ₽</div>
+											</li>
+											<li>
+												<div class="block-order-detail__name">Доставка</div>
+												<div class="block-order-detail__value">Бесплатно</div>
+											</li>
+											<li>
+												<div class="block-order-detail__name">Экономия:</div>
+												<div class="block-order-detail__value">+ 2 370 ₽</div>
+											</li>
+										</ul>
+										<div class="block-order-detail__totals">
+											<div class="block-order-detail__total">
+												<span>Стоимость продуктов</span>
+												<div class="block-order-detail__price1">59400 ₽</div>
+											</div>
+											<div class="block-order-detail__bonus">
+												<span>+ 45 бонусов</span>
+												<div class="block-order-detail__price2">59400 ₽</div>
+											</div>
+										</div>
+										<div class="promocode">
+											<input autocomplete="off" type="text" name="form[]" placeholder="Введите промокод">
+											<button type="button" class="promocode__button">
+												Применить
+											</button>
+										</div>
+										<button type="submit" class="btn">
+											<span>Оформить заказ</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<div class="block-forms">
+					<div class="container">
+						<div class="block-forms__circle"></div>
+						<div class="block-forms__content">
+							<img loading="lazy" src="img/image1.webp" alt="" class="block-forms__pic1">
+							<form action="#" class="form">
+								<div class="form__title">
+									Вопросы / предложения
+									<span>콘택트 렌즈</span>
+								</div>
+								<div class="form__inputs">
+									<div class="form__input">
+										<input autocomplete="off" type="text" name="form[]" data-error="Обязательное поле" placeholder="Ваше имя" class="input">
+									</div>
+									<div class="form__input">
+										<input data-required="email" autocomplete="off" type="text" name="form[]" data-error="Обязательное поле" placeholder="Почта" class="input">
+									</div>
+									<div class="form__input">
+										<textarea placeholder="Сообщение" class="input textarea"></textarea>
+									</div>
+								</div>
+								<div class="form__bottom">
+									<label class="checkbox">
+										<input data-required class="checkbox__input" type="checkbox" value="1" name="form[]">
+										<span class="checkbox__label">
+											<div class="checkbox__icon">
+												<svg aria-hidden="true" width="16" height="12">
+													<use xlink:href="img/sprite.svg#check1"></use>
+												</svg>
+											</div>
+											<span class="checkbox__text">
+												<a href="./">Политика хранения<br> персональных данных</a>
+											</span>
+										</span>
+									</label>
+									<button type="submit" class="btn">
+										<span>Отправить</span>
+										<svg aria-hidden="true" width="17" height="17">
+											<use xlink:href="img/sprite.svg#star1"></use>
+										</svg>
+									</button>
+								</div>
+							</form>
+							<div class="block-forms__logo">
+								<img loading="lazy" src="img/icons/logo2.svg" alt="">
+							</div>
+							<div class="block-forms__right">
+								<div class="block-forms__titles">
+									<div class="block-forms__title">Задать вопрос
+										в Телеграм</div>
+									<p>
+										проконсультируем, подскажем
+										по срокам, стоимости и поможем принять правильное решение
+									</p>
+								</div>
+								<a href="./" class="btn mini"><span>Перейти в Telegram</span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</main>
 			<footer class="footer">
 				<div class="container">
