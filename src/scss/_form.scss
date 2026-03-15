@@ -54,7 +54,7 @@
                 color: var(--theme-color-accent);
             }
             &._form-error {
-                border: 1px solid red;
+                border: 1px solid #ce0f2f;
             }
             &.textarea {
                 height: 109px;
@@ -109,7 +109,7 @@
             opacity: 1;
         }
         &._form-error + .checkbox__label .checkbox__icon {
-            border: 1px solid red;
+            border: 1px solid #ce0f2f;
         }
     }
 
@@ -145,7 +145,6 @@
 
     &__text {
         a {
-            display: flex;
             line-height: 105%;
             font-weight: 400;
             font-size: 14px;

@@ -174,23 +174,4 @@
         line-height: 120%;
     }
 }
-.socials {
-    display: flex;
-    gap: 5px;
-    a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        background-color: var(--theme-color-accent2);
-        transition: background-color 0.3s;
-        svg {
-            fill: #fff;
-        }
-        &:hover {
-            background-color: var(--theme-color-accent3);
-        }
-    }
-}
+
