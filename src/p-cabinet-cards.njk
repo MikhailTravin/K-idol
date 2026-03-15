@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Личный кабинет - скидочные карты</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <div class="block-cabinet">
+                <div class="container">
+                    <div class="block-cabinet__heading-complex">
+                        <div class="breadcrumbs">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            Главная
+                                            <svg aria-hidden="true" width="23" height="8">
+                                                <use xlink:href="img/sprite.svg#arrow2"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li><span>Разное</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h2 class="title2">Личный кабинет</h2>
+                    </div>
+                    <div class="block-cabinet__content">
+                        <a href="./" class="block-cabinet__back">
+                            <svg aria-hidden="true" width="23" height="15">
+                                <use xlink:href="img/sprite.svg#arrow4"></use>
+                            </svg>
+                        </a>
+                        <div class="block-cabinet-menu">
+                            <div class="block-cabinet-menu__top">
+                                <div class="block-cabinet-menu__name">
+                                    <img src="img/image8.webp" alt="">
+                                    <span>Ольга Р.</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        Скидка
+                                        <span>-23%</span>
+                                    </li>
+                                    <li>
+                                        Бонусные баллы
+                                        <span>4367</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="block-cabinet-menu__list">
+                                <ul>
+                                    <li>
+                                        <a href="./" class="my-orders">
+                                            Мои заказы
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./">
+                                            Мои данные
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Мои адреса</a>
+                                    </li>
+                                    <li>
+                                        <a href="./" class="active">
+                                            <svg aria-hidden="true" width="17" height="17">
+                                                <use xlink:href="img/sprite.svg#star1"></use>
+                                            </svg>
+                                            Скидочные карты
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Избранное</a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Служба заботы</a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Акции</a>
+                                    </li>
+                                    <li>
+                                        <a href="./" class="logout">Выйти</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block-cabinet__body">
+                            <img src="img/icons/logo7.svg" alt="" class="block-cabinet__logo">
+                            <div class="block-cabinet__container">
+                                <div class="block-cabinet__title">
+                                    Скидочные карты
+                                </div>
+                                <div class="block-cabinet-cards">
+                                    <div class="block-cabinet-cards__image">
+                                        <img src="img/cards.webp" alt="">
+                                    </div>
+                                    <div class="block-cabinet-cards__body">
+                                        <div class="block-cabinet-cards__column">
+                                            <div class="block-cabinet-cards__title">
+                                                Правила списания бонусов
+                                            </div>
+                                            <div class="block-cabinet-cards__text">
+                                                <p>
+                                                    Начисленные за покупки бонусы можно списать полностью или частично
+                                                    на любые товары, кроме брендов-исключений. 1 бонус = 1 рубль.
+                                                </p>
+                                                <p>
+                                                    На вашу карту лояльности могут быть начислены акционные бонусы.
+                                                    Акционные бонусы сгорают в течение указанного в акции периода после
+                                                    начисления.
+                                                </p>
+                                                <p>
+                                                    Сумма покупки, которую можно оплатить акционными бонусами, и правила
+                                                    списания бонусов (онлайн или в магазинах) зависят от условий
+                                                    конкретной акции.
+                                                    бренды-исключения
+                                                </p>
+                                                <ul>
+                                                    <li>BORK</li>
+                                                    <li>DIOR</li>
+                                                    <li>DIOR BACKSTAGE</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="block-cabinet-cards__column">
+                                            <div class="block-cabinet-cards__title">
+                                                Другие исключения
+                                            </div>
+                                            <div class="block-cabinet-cards__text">
+                                                <p>
+                                                    При покупке подарочных карт списание бонусов недоступно.
+                                                    <br>
+                                                    Подробнее о бонусах <a href="./">в документах сайта.</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <a href="./" class="btn">
+                                            Добавить карту
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'blocks/forms.njk' %}
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

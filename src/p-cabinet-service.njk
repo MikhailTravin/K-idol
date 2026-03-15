@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Личный кабинет - служба заботы</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <div class="block-cabinet">
+                <div class="container">
+                    <div class="block-cabinet__heading-complex">
+                        <div class="breadcrumbs">
+                            <div class="container">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            Главная
+                                            <svg aria-hidden="true" width="23" height="8">
+                                                <use xlink:href="img/sprite.svg#arrow2"></use>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li><span>Разное</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h2 class="title2">Личный кабинет</h2>
+                    </div>
+                    <div class="block-cabinet__content">
+                        <a href="./" class="block-cabinet__back">
+                            <svg aria-hidden="true" width="23" height="15">
+                                <use xlink:href="img/sprite.svg#arrow4"></use>
+                            </svg>
+                        </a>
+                        <div class="block-cabinet-menu">
+                            <div class="block-cabinet-menu__top">
+                                <div class="block-cabinet-menu__name">
+                                    <img src="img/image8.webp" alt="">
+                                    <span>Ольга Р.</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        Скидка
+                                        <span>-23%</span>
+                                    </li>
+                                    <li>
+                                        Бонусные баллы
+                                        <span>4367</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="block-cabinet-menu__list">
+                                <ul>
+                                    <li>
+                                        <a href="./" class="my-orders">
+                                            Мои заказы
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./">
+                                            Мои данные
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./" class="active">
+                                            <svg aria-hidden="true" width="17" height="17">
+                                                <use xlink:href="img/sprite.svg#star1"></use>
+                                            </svg>
+                                            Мои адреса
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./">
+                                            Скидочные карты
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Избранное</a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Служба заботы</a>
+                                    </li>
+                                    <li>
+                                        <a href="./">Акции</a>
+                                    </li>
+                                    <li>
+                                        <a href="./" class="logout">Выйти</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="block-cabinet__body">
+                            <img src="img/icons/logo7.svg" alt="" class="block-cabinet__logo">
+                            <div class="block-cabinet__container">
+                                <div class="block-cabinet__title">
+                                    Служба заботы
+                                </div>
+                                <div class="block-cabinet-form">
+                                    <div class="block-cabinet-form__column block-cabinet-service">
+                                        <div class="block-cabinet-form__title">
+                                            Выберите удобный способ общения - <span>и мы ответим на все ваши
+                                                вопросы!</span>
+                                        </div>
+                                        <div class="block-cabinet-contacts">
+                                            <a href="./" class="block-cabinet-contacts__column">
+                                                <div class="block-cabinet-contacts__top">
+                                                    <div class="block-cabinet-contacts__icon">
+                                                        <svg aria-hidden="true" width="23" height="15">
+                                                            <use xlink:href="img/sprite.svg#vk"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="block-cabinet-contacts__bottom">
+                                                    <div class="block-cabinet-contacts__subtitle">
+                                                        Мы в ВКонтакте
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="./" class="block-cabinet-contacts__column">
+                                                <div class="block-cabinet-contacts__top">
+                                                    <div class="block-cabinet-contacts__icon">
+                                                        <svg style="margin-right:-1px;" aria-hidden="true" width="22"
+                                                            height="18">
+                                                            <use xlink:href="img/sprite.svg#telegram"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="block-cabinet-contacts__bottom">
+                                                    <div class="block-cabinet-contacts__subtitle">
+                                                        Мы в ВКонтакте
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="./" class="block-cabinet-contacts__column">
+                                                <div class="block-cabinet-contacts__top">
+                                                    <div class="block-cabinet-contacts__icon">
+                                                        <svg aria-hidden="true" width="26" height="27">
+                                                            <use xlink:href="img/sprite.svg#whatsapp"></use>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="block-cabinet-contacts__bottom">
+                                                    <div class="block-cabinet-contacts__subtitle">
+                                                        Мы в WhatsApp*
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="./" class="block-cabinet-contacts__column">
+                                                <div class="block-cabinet-contacts__top">
+                                                    <div class="block-cabinet-contacts__icon">
+                                                        <img src="img/icons/email.svg" alt="">
+                                                    </div>
+                                                </div>
+                                                <div class="block-cabinet-contacts__bottom">
+                                                    <div class="block-cabinet-contacts__subtitle">
+                                                        Написать по Email
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="block-cabinet-form__text">
+                                            * -Принадлежит компании Meta, признанной экстремистской организацией и
+                                            запрещенной на территории РФ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% include 'blocks/forms.njk' %}
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>

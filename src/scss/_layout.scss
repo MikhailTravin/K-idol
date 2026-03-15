@@ -27,6 +27,18 @@
   @media (max-width: 359px) {
     padding: 78px 0px 0px 0px;
   }
+  .header-scroll &{
+    padding: 56px 0px 0px 0px;
+    @media (max-width: 1100px) {
+      padding: 96px 0px 0px 0px;
+    }
+    @media (max-width: 550px) {
+      padding: 94px 0px 0px 0px;
+    }
+    @media (max-width: 359px) {
+      padding: 78px 0px 0px 0px;
+    }
+  }
 }
 
 .container {

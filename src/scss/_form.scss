@@ -583,3 +583,197 @@ $starActive: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTciIHZp
         }
     }
 }
+
+.form-calendar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    // .form-calendar__inputs
+
+    &__inputs {
+        position: relative;
+        &.active {
+            .calendar {
+                opacity: 1;
+                pointer-events: auto;
+            }
+            .form-calendar__input {
+                border-radius: 5px 5px 0px 0px;
+            }
+        }
+    }
+
+    // .form-calendar__input
+
+    &__input {
+        transition: border-radius 0.3s;
+        cursor: pointer;
+        position: relative;
+        background: #f5f5f5;
+        border-radius: 5px;
+        padding: 0px 22px;
+        height: 50px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        @media (max-width: 600px) {
+            padding: 0px 12px;
+        }
+        input {
+            font-weight: 400;
+            font-size: 14px;
+            width: 100%;
+            height: auto;
+            &::placeholder {
+                color: var(--theme-color-accent);
+            }
+        }
+        img {
+            flex: 0 0 25px;
+            width: 25px;
+            height: auto;
+        }
+    }
+}
+
+//Календарь
+.calendar {
+    position: absolute;
+    top: 100%;
+    z-index: 40;
+    left: 0;
+    width: 100%;
+    flex: 1 1 auto;
+    background: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    // .calendar__content
+    &__content {
+    }
+    // .calendar__header
+    &__header {
+        display: flex;
+        align-items: center;
+        margin: 0px 0px 12px 0px;
+        span {
+            flex: 1 1 auto;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 133%;
+            letter-spacing: -0.01em;
+            text-align: center;
+        }
+    }
+    // .calendar__btn-prev
+    &__btn-prev {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px 0px 0px;
+        svg {
+            fill: var(--theme-color-accent3);
+            transform: rotate(-90deg);
+        }
+    }
+    // .calendar__btn-next
+    &__btn-next {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 0px 10px;
+        svg {
+            fill: var(--theme-color-accent3);
+            transform: rotate(90deg);
+        }
+    }
+    // .calendar__wrapper
+    &__wrapper {
+    }
+    // .calendar__days
+    &__days {
+        display: grid;
+        height: 40px;
+        column-gap: 2px;
+        grid-template-columns: repeat(7, 1fr);
+        pointer-events: none;
+    }
+    // .calendar__main
+    &__main {
+        display: grid;
+        gap: 1px;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(5, min(40px));
+        @media (max-width: 375px) {
+            grid-template-rows: repeat(5, min(35px));
+        }
+    }
+}
+
+.cell_wrapper.current {
+    opacity: 1;
+    color: #000;
+}
+.cell_wrapper {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 138%;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    border: 1px solid transparent;
+    background: transparent;
+    color: #000;
+    &:nth-child(n + 36) {
+        display: none;
+    }
+    &.isCurrent {
+        border: 1px solid #000;
+        background: transparent;
+        color: #000;
+        font-weight: 700;
+    }
+    &.isCurrent.isSelected {
+        border: 1px solid transparent;
+        background: var(--theme-color-accent3);
+        color: #fff;
+        font-weight: 700;
+    }
+}
+
+.cell_wrapper.isCurrent .cell_wrapper.cal_days {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 138%;
+    text-align: center;
+    color: #000;
+}
+
+.cell_wrapper.cal_date.current.isCurrent.inRange {
+    border: 1px solid transparent;
+}
+
+.cell_wrapper.inRange {
+    background-color: var(--theme-color-accent3);
+}
+
+.cell_wrapper.current.inRange {
+    background-color: var(--theme-color-accent3);
+    border-radius: 0;
+}
+
+.cell_wrapper.isSelected {
+    background-color: var(--theme-color-accent3);
+    color: #fff;
+}
