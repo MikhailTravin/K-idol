@@ -618,6 +618,53 @@ document.querySelectorAll('.block-products__slider').forEach((sliderElement) => 
   });
 });
 
+if (document.querySelector('.images-product')) {
+  const thumbsSwiper = new Swiper('.images-product__thumb', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 10,
+    speed: 400,
+    preloadImages: true,
+    direction: "vertical",
+    navigation: {
+      prevEl: '.images-product__arrow-prev',
+      nextEl: '.images-product__arrow-next',
+    },
+    breakpoints: {
+      480: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
+      },
+      992: {
+        direction: "horizontal",
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        direction: "vertical",
+      },
+    },
+  });
+
+  const mainThumbsSwiper = new Swiper('.images-product__slider', {
+    thumbs: {
+      swiper: thumbsSwiper
+    },
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 400,
+    preloadImages: true,
+    navigation: {
+      prevEl: '.images-product__arrow-prev',
+      nextEl: '.images-product__arrow-next',
+    },
+  });
+}
+
 //========================================================================================================================================================
 
 const filterSlides = document.querySelectorAll('.block-brands__slide');
@@ -1720,10 +1767,231 @@ if (header) {
 
 //========================================================================================================================================================
 
-
+Fancybox.bind("[data-fancybox]", {
+  // опции
+});
 
 //========================================================================================================================================================
-/*
+
+//Наблюдатель
+class ScrollWatcher {
+  constructor(props) {
+    let defaultConfig = {
+      logging: true,
+    }
+    this.config = Object.assign(defaultConfig, props);
+    this.observer;
+    !document.documentElement.classList.contains('watcher') ? this.scrollWatcherRun() : null;
+  }
+  scrollWatcherUpdate() {
+    this.scrollWatcherRun();
+  }
+  scrollWatcherRun() {
+    document.documentElement.classList.add('watcher');
+    this.scrollWatcherConstructor(document.querySelectorAll('[data-watch]'));
+  }
+  scrollWatcherConstructor(items) {
+    if (items.length) {
+      let uniqParams = uniqArray(Array.from(items).map(function (item) {
+        if (item.dataset.watch === 'navigator' && !item.dataset.watchThreshold) {
+          let valueOfThreshold;
+          if (item.clientHeight > 2) {
+            valueOfThreshold =
+              window.innerHeight / 2 / (item.clientHeight - 1);
+            if (valueOfThreshold > 1) {
+              valueOfThreshold = 1;
+            }
+          } else {
+            valueOfThreshold = 1;
+          }
+          item.setAttribute(
+            'data-watch-threshold',
+            valueOfThreshold.toFixed(2)
+          );
+        }
+        return `${item.dataset.watchRoot ? item.dataset.watchRoot : null}|${item.dataset.watchMargin ? item.dataset.watchMargin : '0px'}|${item.dataset.watchThreshold ? item.dataset.watchThreshold : 0}`;
+      }));
+      uniqParams.forEach(uniqParam => {
+        let uniqParamArray = uniqParam.split('|');
+        let paramsWatch = {
+          root: uniqParamArray[0],
+          margin: uniqParamArray[1],
+          threshold: uniqParamArray[2]
+        }
+        let groupItems = Array.from(items).filter(function (item) {
+          let watchRoot = item.dataset.watchRoot ? item.dataset.watchRoot : null;
+          let watchMargin = item.dataset.watchMargin ? item.dataset.watchMargin : '0px';
+          let watchThreshold = item.dataset.watchThreshold ? item.dataset.watchThreshold : 0;
+          if (
+            String(watchRoot) === paramsWatch.root &&
+            String(watchMargin) === paramsWatch.margin &&
+            String(watchThreshold) === paramsWatch.threshold
+          ) {
+            return item;
+          }
+        });
+
+        let configWatcher = this.getScrollWatcherConfig(paramsWatch);
+
+        this.scrollWatcherInit(groupItems, configWatcher);
+      });
+    }
+  }
+  getScrollWatcherConfig(paramsWatch) {
+    let configWatcher = {}
+    if (document.querySelector(paramsWatch.root)) {
+      configWatcher.root = document.querySelector(paramsWatch.root);
+    }
+    configWatcher.rootMargin = paramsWatch.margin;
+    if (paramsWatch.margin.indexOf('px') < 0 && paramsWatch.margin.indexOf('%') < 0) {
+      return
+    }
+    if (paramsWatch.threshold === 'prx') {
+      paramsWatch.threshold = [];
+      for (let i = 0; i <= 1.0; i += 0.005) {
+        paramsWatch.threshold.push(i);
+      }
+    } else {
+      paramsWatch.threshold = paramsWatch.threshold.split(',');
+    }
+    configWatcher.threshold = paramsWatch.threshold;
+
+    return configWatcher;
+  }
+  scrollWatcherCreate(configWatcher) {
+    console.log(configWatcher);
+    this.observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        this.scrollWatcherCallback(entry, observer);
+      });
+    }, configWatcher);
+  }
+  scrollWatcherInit(items, configWatcher) {
+    this.scrollWatcherCreate(configWatcher);
+    items.forEach(item => this.observer.observe(item));
+  }
+  scrollWatcherIntersecting(entry, targetElement) {
+    if (entry.isIntersecting) {
+      !targetElement.classList.contains('_watcher-view') ? targetElement.classList.add('_watcher-view') : null;
+    } else {
+      targetElement.classList.contains('_watcher-view') ? targetElement.classList.remove('_watcher-view') : null;
+    }
+  }
+  scrollWatcherOff(targetElement, observer) {
+    observer.unobserve(targetElement);
+  }
+  scrollWatcherCallback(entry, observer) {
+    const targetElement = entry.target;
+    this.scrollWatcherIntersecting(entry, targetElement);
+    targetElement.hasAttribute('data-watch-once') && entry.isIntersecting ? this.scrollWatcherOff(targetElement, observer) : null;
+    document.dispatchEvent(new CustomEvent("watcherCallback", {
+      detail: {
+        entry: entry
+      }
+    }));
+  }
+}
+modules_flsModules.watcher = new ScrollWatcher({});
+
+//========================================================================================================================================================
+
+//Прокрутка к блоку
+let gotoBlock = (targetBlock, noHeader = false, speed = 500, offsetTop = 0) => {
+  const targetBlockElement = document.querySelector(targetBlock);
+  if (targetBlockElement) {
+    let headerItem = '';
+    let headerItemHeight = 0;
+    if (noHeader) {
+      headerItem = 'header.header';
+      const headerElement = document.querySelector(headerItem);
+      if (!headerElement.classList.contains('_header-scroll')) {
+        headerElement.style.cssText = `transition-duration: 0s;`;
+        headerElement.classList.add('_header-scroll');
+        headerItemHeight = headerElement.offsetHeight;
+        headerElement.classList.remove('_header-scroll');
+        setTimeout(() => {
+          headerElement.style.cssText = ``;
+        }, 0);
+      } else {
+        headerItemHeight = headerElement.offsetHeight;
+      }
+    }
+    let options = {
+      speedAsDuration: true,
+      speed: speed,
+      header: headerItem,
+      offset: offsetTop,
+      easing: 'easeOutQuad',
+    };
+    document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+
+    if (typeof SmoothScroll !== 'undefined') {
+      new SmoothScroll().animateScroll(targetBlockElement, '', options);
+    } else {
+      let targetBlockElementPosition = targetBlockElement.getBoundingClientRect().top + scrollY;
+      targetBlockElementPosition = headerItemHeight ? targetBlockElementPosition - headerItemHeight : targetBlockElementPosition;
+      targetBlockElementPosition = offsetTop ? targetBlockElementPosition - offsetTop : targetBlockElementPosition;
+      window.scrollTo({
+        top: targetBlockElementPosition,
+        behavior: "smooth"
+      });
+    }
+  }
+};
+function pageNavigation() {
+  document.addEventListener("click", pageNavigationAction);
+  document.addEventListener("watcherCallback", pageNavigationAction);
+  function pageNavigationAction(e) {
+    if (e.type === "click") {
+      const targetElement = e.target;
+      if (targetElement.closest('[data-goto]')) {
+        const gotoLink = targetElement.closest('[data-goto]');
+        const gotoLinkSelector = gotoLink.dataset.goto ? gotoLink.dataset.goto : '';
+        const noHeader = gotoLink.hasAttribute('data-goto-header') ? true : false;
+        const gotoSpeed = gotoLink.dataset.gotoSpeed ? gotoLink.dataset.gotoSpeed : 500;
+        const offsetTop = gotoLink.dataset.gotoTop ? parseInt(gotoLink.dataset.gotoTop) : 0;
+        if (modules_flsModules.fullpage) {
+          const fullpageSection = document.querySelector(`${gotoLinkSelector}`).closest('[data-fp-section]');
+          const fullpageSectionId = fullpageSection ? +fullpageSection.dataset.fpId : null;
+          if (fullpageSectionId !== null) {
+            modules_flsModules.fullpage.switchingSection(fullpageSectionId);
+            document.documentElement.classList.contains("menu-open") ? menuClose() : null;
+          }
+        } else {
+          gotoBlock(gotoLinkSelector, noHeader, gotoSpeed, offsetTop);
+        }
+        e.preventDefault();
+      }
+    } else if (e.type === "watcherCallback" && e.detail) {
+      const entry = e.detail.entry;
+      const targetElement = entry.target;
+      if (targetElement.dataset.watch === 'navigator') {
+        const navigatorActiveItem = document.querySelector(`[data-goto]._navigator-active`);
+        let navigatorCurrentItem;
+        if (targetElement.id && document.querySelector(`[data-goto="#${targetElement.id}"]`)) {
+          navigatorCurrentItem = document.querySelector(`[data-goto="#${targetElement.id}"]`);
+        } else if (targetElement.classList.length) {
+          for (let index = 0; index < targetElement.classList.length; index++) {
+            const element = targetElement.classList[index];
+            if (document.querySelector(`[data-goto=".${element}"]`)) {
+              navigatorCurrentItem = document.querySelector(`[data-goto=".${element}"]`);
+              break;
+            }
+          }
+        }
+        if (entry.isIntersecting) {
+          navigatorCurrentItem ? navigatorCurrentItem.classList.add('_navigator-active') : null;
+        } else {
+          navigatorCurrentItem ? navigatorCurrentItem.classList.remove('_navigator-active') : null;
+        }
+      }
+    }
+  }
+}
+pageNavigation()
+
+//========================================================================================================================================================
+
 //Попап
 class Popup {
   constructor(options) {
@@ -1792,7 +2060,6 @@ class Popup {
       }
     };
     this.bodyLock = false;
-    this.servicesPopupSelector = '.services-popup';
     this.options.init ? this.initPopups() : null;
   }
   initPopups() {
@@ -1856,9 +2123,6 @@ class Popup {
       if (!this._reopen) this.previousActiveElement = document.activeElement;
       this.targetOpen.element = document.querySelector(this.targetOpen.selector);
       if (this.targetOpen.element) {
-        if (this.targetOpen.element.matches(this.servicesPopupSelector)) {
-          document.documentElement.classList.add('services-popup-open');
-        }
         if (this.youTubeCode) {
           const codeVideo = this.youTubeCode;
           const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`;
@@ -1921,7 +2185,6 @@ class Popup {
     this.previousOpen.element.setAttribute("aria-hidden", "true");
     if (!this._reopen) {
       document.documentElement.classList.remove(this.options.classes.bodyActive);
-      document.documentElement.classList.remove('services-popup-open');
       !this.bodyLock ? bodyUnlock() : null;
       this.isOpen = false;
     }
@@ -1972,1197 +2235,67 @@ function menuClose() {
 
 //========================================================================================================================================================
 
-const mapElements = document.querySelectorAll('.map');
+const catalogImage = document.querySelector('.header-catalog__image img');
 
-if (mapElements.length > 0) {
-  const mapObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const currentMap = entry.target;
-        mapObserver.unobserve(currentMap);
+if (catalogImage) {
+  const menuItems = document.querySelectorAll('.header-catalog-menu1, .header-catalog-menu2, .header-catalog-menu3');
+  const menuContainer = document.querySelector('ul');
+  const emptyPixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  let activeItem = null;
 
-        if (typeof ymaps === 'undefined') {
-          const script = document.createElement('script');
-          script.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=ВАШ_КЛЮЧ_API';
-          script.async = true;
-
-          script.onload = () => {
-            if (typeof ymaps !== 'undefined') {
-              ymaps.ready(() => safeInitMap(currentMap));
-            }
-          };
-
-          document.head.appendChild(script);
-        } else {
-          ymaps.ready(() => safeInitMap(currentMap));
-        }
-      }
-    });
-  }, {
-    rootMargin: '0px 0px 200px 0px',
-    threshold: 0.1
-  });
-
-  mapElements.forEach(mapElement => {
-    mapObserver.observe(mapElement);
-  });
-}
-
-function safeInitMap(mapElement) {
-  const mapId = mapElement.id;
-
-  try {
-    const myMap = new ymaps.Map(mapId, {
-      center: [59.890857, 30.411512],
-      zoom: 17,
-      controls: ['zoomControl']
-    });
-
-  } catch (error) {
-    console.error('Error initializing map:', error);
-  }
-}
-
-//========================================================================================================================================================
-
-//Спойлер
-function initSpollersModule() {
-  const spollersArray = document.querySelectorAll("[data-spollers]");
-  if (spollersArray.length > 0) {
-    const spollersRegular = Array.from(spollersArray).filter((function (item, index, self) {
-      return !item.dataset.spollers.split(",")[0];
-    }));
-    if (spollersRegular.length) initSpollers(spollersRegular);
-
-    spollersArray.forEach(spollersBlock => {
-      const mediaQuery = spollersBlock.dataset.spollers;
-      if (mediaQuery) {
-        const [maxWidth, type] = mediaQuery.split(",");
-        const width = parseInt(maxWidth);
-
-        if (type === "max" && window.innerWidth <= width) {
-          if (!spollersBlock.classList.contains("_spoller-init")) {
-            initSpollers([spollersBlock]);
-          }
-        } else if (type === "max" && window.innerWidth > width) {
-          if (spollersBlock.classList.contains("_spoller-init")) {
-            spollersBlock.classList.remove("_spoller-init");
-            initSpollerBody(spollersBlock, false);
-            spollersBlock.removeEventListener("click", setSpollerAction);
-          }
-        }
-      }
-    });
-  }
-}
-function initSpollers(spollersArray, matchMedia = false) {
-  spollersArray.forEach((spollersBlock => {
-    spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
-    if (matchMedia.matches || !matchMedia) {
-      spollersBlock.classList.add("_spoller-init");
-      initSpollerBody(spollersBlock);
-      spollersBlock.addEventListener("click", setSpollerAction);
+  function setImage(src) {
+    if (src && src.trim() !== '') {
+      catalogImage.src = src;
+      catalogImage.style.opacity = '1';
+      catalogImage.style.display = 'block';
     } else {
-      spollersBlock.classList.remove("_spoller-init");
-      initSpollerBody(spollersBlock, false);
-      spollersBlock.removeEventListener("click", setSpollerAction);
-    }
-  }));
-}
-function initSpollerBody(spollersBlock, hideSpollerBody = true) {
-  let spollerTitles = spollersBlock.querySelectorAll("[data-spoller]");
-  if (spollerTitles.length) {
-    spollerTitles = Array.from(spollerTitles).filter((item => item.closest("[data-spollers]") === spollersBlock));
-    spollerTitles.forEach((spollerTitle => {
-      if (hideSpollerBody) {
-        spollerTitle.removeAttribute("tabindex");
-        if (!spollerTitle.classList.contains("_spoller-active")) {
-          spollerTitle.nextElementSibling.hidden = true;
-        }
-      } else {
-        spollerTitle.setAttribute("tabindex", "-1");
-        spollerTitle.nextElementSibling.hidden = false;
-      }
-    }));
-  }
-}
-function setSpollerAction(e) {
-  const el = e.target;
-  if (el.closest("[data-spoller]")) {
-    const spollerTitle = el.closest("[data-spoller]");
-
-    const spollerItem = spollerTitle.closest(".spollers__item, .menu__item");
-    const spollersBlock = spollerTitle.closest("[data-spollers]");
-
-    const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
-    const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
-
-    if (!spollersBlock.querySelectorAll("._slide").length) {
-      if (oneSpoller && !spollerTitle.classList.contains("_spoller-active")) {
-        hideSpollersBody(spollersBlock);
-      }
-
-      spollerTitle.classList.toggle("_spoller-active");
-      if (spollerItem) spollerItem.classList.toggle("_spoller-active");
-
-      const contentBlock = spollerTitle.nextElementSibling;
-      _slideToggle(contentBlock, spollerSpeed);
-
-      e.preventDefault();
+      catalogImage.src = emptyPixel;
+      catalogImage.style.opacity = '0';
+      catalogImage.style.display = 'none';
     }
   }
-}
-function hideSpollersBody(spollersBlock) {
-  const spollerActiveTitle = spollersBlock.querySelector("[data-spoller]._spoller-active");
-  const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
-  if (spollerActiveTitle && !spollersBlock.querySelectorAll("._slide").length) {
-    const spollerItem = spollerActiveTitle.closest(".spollers__item, .menu__item");
 
-    spollerActiveTitle.classList.remove("_spoller-active");
-    if (spollerItem) spollerItem.classList.remove("_spoller-active");
-    _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+  function getImagePath(element) {
+    if (element && element.dataset && element.dataset.image) {
+      const path = element.dataset.image.trim();
+      return path !== '' ? path : null;
+    }
+    return null;
   }
-}
 
-initSpollersModule();
-
-//========================================================================================================================================================
-
-// Работа с формами
-const forms = document.querySelectorAll('.form');
-
-if (forms) {
-  forms.forEach((form, formIndex) => {
-    const columns = form.querySelectorAll('.form__column');
-
-    columns.forEach((column, columnIndex) => {
-      const addButton = column.querySelector('.add-form-button');
-
-      if (!addButton) return;
-
-      const addressBlocks = column.querySelectorAll('.add-form');
-      const actualBlockCount = addressBlocks.length;
-
-      const maxFormValue = addButton.getAttribute('data-max-form');
-      addButton.dataset.maxForm = maxFormValue ? parseInt(maxFormValue) : 3;
-      addButton.dataset.currentCount = actualBlockCount;
-
-      addButton.classList.remove('disabled');
-      addButton.style.cssText = '';
-
-      updateButtonState(addButton, column);
-
-      addButton.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        const maxForm = parseInt(this.dataset.maxForm);
-
-        const currentBlocks = column.querySelectorAll('.add-form');
-        let currentCount = currentBlocks.length;
-        this.dataset.currentCount = currentCount;
-
-        if (currentCount >= maxForm) {
-          return;
-        }
-
-        const templateBlock = column.querySelector('.add-form');
-
-        if (templateBlock) {
-          const isFormBody = templateBlock.classList.contains('form__body');
-
-          let newBlock;
-
-          if (isFormBody) {
-            const content = templateBlock.cloneNode(true);
-            content.className = 'form__body add-form';
-
-            const inputs = content.querySelectorAll('input');
-            inputs.forEach(input => {
-              input.value = '';
-            });
-
-            const allInputs = content.querySelectorAll('input');
-            const allLabels = content.querySelectorAll('label');
-
-            allLabels.forEach((label, index) => {
-              const input = allInputs[index];
-              if (input && label) {
-                const newId = 'form_' + Date.now() + '_' + columnIndex + '_' + currentCount + '_' + index;
-                label.setAttribute('for', newId);
-                input.setAttribute('id', newId);
-              }
-            });
-
-            newBlock = content;
-          } else {
-            newBlock = templateBlock.cloneNode(true);
-
-            const inputs = newBlock.querySelectorAll('input');
-            inputs.forEach(input => {
-              input.value = '';
-            });
-
-            const allInputs = newBlock.querySelectorAll('input');
-            const allLabels = newBlock.querySelectorAll('label');
-
-            allLabels.forEach((label, index) => {
-              const input = allInputs[index];
-              if (input && label) {
-                const newId = 'form_' + Date.now() + '_' + columnIndex + '_' + currentCount + '_' + index;
-                label.setAttribute('for', newId);
-                input.setAttribute('id', newId);
-              }
-            });
-          }
-
-          const oldDeleteBtn = newBlock.querySelector('.delete-form');
-          if (oldDeleteBtn) {
-            oldDeleteBtn.remove();
-          }
-
-          addDeleteButtonToBlock(newBlock);
-
-          const lastBlock = column.querySelector('.add-form:last-child');
-          if (lastBlock) {
-            lastBlock.insertAdjacentElement('afterend', newBlock);
-          } else {
-            const formBody = column.querySelector('.form__body');
-            if (formBody) {
-              formBody.appendChild(newBlock);
-            }
-          }
-
-          const newSpollers = newBlock.querySelectorAll('[data-spollers]');
-          if (newSpollers.length) {
-            newSpollers.forEach(spollerBlock => {
-              spollerBlock.classList.add('_spoller-init');
-              initSpollerBody(spollerBlock);
-              spollerBlock.addEventListener('click', setSpollerAction);
-            });
-          }
-
-          const newTotalBlocks = column.querySelectorAll('.add-form').length;
-          this.dataset.currentCount = newTotalBlocks;
-
-          addDeleteHandler(newBlock, this, column);
-
-          updateButtonState(this, column);
-        }
-      });
-
-      function addDeleteButtonToBlock(block) {
-        const firstFormInput = block.querySelector('.form__input');
-
-        if (firstFormInput) {
-          const label = firstFormInput.querySelector('label');
-
-          if (label && !label.querySelector('.delete-form')) {
-            const deleteButton = document.createElement('div');
-            deleteButton.className = 'delete-form';
-            deleteButton.innerHTML = '<img src="img/icons/close3.svg" alt="">';
-            label.appendChild(deleteButton);
-          }
-        }
-      }
-
-      addressBlocks.forEach((block, index) => {
-        if (index > 0) {
-          addDeleteButtonToBlock(block);
-        }
-
-        addDeleteHandler(block, addButton, column);
-      });
+  menuItems.forEach(item => {
+    item.addEventListener('mouseenter', function () {
+      activeItem = this;
+      const imagePath = getImagePath(this);
+      setImage(imagePath);
     });
   });
 
-  function addDeleteHandler(block, addButton, column) {
-    const deleteButton = block.querySelector('.delete-form');
-
-    if (deleteButton) {
-      deleteButton.removeEventListener('click', handleDelete);
-      deleteButton.addEventListener('click', handleDelete);
-    }
-
-    function handleDelete(e) {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const addressBlock = e.currentTarget.closest('.add-form');
-
-      if (addressBlock) {
-        const firstBlock = column.querySelector('.add-form');
-        if (addressBlock === firstBlock) {
-          return;
-        }
-
-        addressBlock.remove();
-
-        const remainingBlocks = column.querySelectorAll('.add-form');
-        addButton.dataset.currentCount = remainingBlocks.length;
-
-        updateButtonState(addButton, column);
-      }
-    }
-  }
-
-  function updateButtonState(button, column) {
-    if (!button || !column) return;
-
-    const maxForm = parseInt(button.dataset.maxForm);
-    const actualBlocks = column.querySelectorAll('.add-form').length;
-    button.dataset.currentCount = actualBlocks;
-
-    if (actualBlocks >= maxForm) {
-      button.classList.add('disabled');
-      button.style.cssText = 'opacity: 0.5; pointer-events: none;';
-    } else {
-      button.classList.remove('disabled');
-      button.style.cssText = '';
-    }
-  }
-}
-
-//========================================================================================================================================================
-
-
-
-const dataElements = document.querySelectorAll('.data');
-if (dataElements.length) {
-  Inputmask({
-    "mask": "99/99/9999",
-    "placeholder": "dd/mm/yyyy",
-    "showMaskOnHover": false,
-    "definitions": {
-      '9': {
-        "validator": "[0-9]"
-      }
-    },
-    "onBeforeMask": function (value) {
-      return value.replace(/[^\d]/g, '');
-    },
-    "onUnMask": function (maskedValue) {
-      return maskedValue.replace(/[^\d]/g, '');
-    }
-  }).mask(dataElements);
-}
-
-//========================================================================================================================================================
-
-function initFilePreview() {
-  function updatePreviewActiveState(previewContainer) {
-    if (!previewContainer) return;
-
-    if (previewContainer.children.length > 0) {
-      previewContainer.classList.add('active');
-    } else {
-      previewContainer.classList.remove('active');
-    }
-  }
-
-  const fileElements = document.querySelectorAll('.services-popup__file');
-
-  if (fileElements.length === 0) return;
-
-  fileElements.forEach(fileElement => {
-    const input = fileElement.querySelector('input[type="file"]');
-    if (!input) return;
-
-    const filesContainer = fileElement.closest('.services-popup__files');
-    if (!filesContainer) return;
-
-    const previewContainer = filesContainer.querySelector('.services-popup__preview');
-    if (!previewContainer) return;
-
-    input.removeEventListener('change', handleFileChange);
-    input.addEventListener('change', handleFileChange);
-
-    function handleFileChange(e) {
-      const file = e.target.files[0];
-
-      if (file) {
-        if (file.type.startsWith('image/')) {
-          const previewItem = document.createElement('div');
-          previewItem.className = 'preview-item';
-
-          previewItem.addEventListener('click', function (event) {
-            event.stopPropagation();
-          });
-
-          const fileName = document.createElement('span');
-          fileName.className = 'preview-filename';
-
-          let displayName = file.name;
-          if (displayName.length > 20) {
-            const nameParts = displayName.split('.');
-            const extension = nameParts.pop();
-            const nameWithoutExt = nameParts.join('.');
-            displayName = nameWithoutExt.substring(0, 15) + '...' + extension;
-          }
-          fileName.textContent = displayName;
-
-          const removeBtn = document.createElement('button');
-          removeBtn.className = 'preview-remove';
-          removeBtn.innerHTML = '×';
-
-          removeBtn.addEventListener('click', function (event) {
-            event.stopPropagation();
-            event.preventDefault();
-            previewItem.remove();
-            input.value = '';
-
-            updatePreviewActiveState(previewContainer);
-          });
-
-          previewItem.appendChild(fileName);
-          previewItem.appendChild(removeBtn);
-          previewContainer.appendChild(previewItem);
-
-          updatePreviewActiveState(previewContainer);
-        } else {
-          alert('Пожалуйста, выберите изображение');
-          input.value = '';
-        }
-      }
-    }
-  });
-
-  document.querySelectorAll('.services-popup__preview').forEach(previewContainer => {
-    updatePreviewActiveState(previewContainer);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.services-popup')) {
-    initFilePreview();
-  }
-});
-
-//========================================================================================================================================================
-
-function initOrderProcessingFilePreview() {
-  function updatePreviewActiveState(previewContainer) {
-    if (!previewContainer) return;
-    if (previewContainer.children.length > 0) {
-      previewContainer.classList.add('active');
-    } else {
-      previewContainer.classList.remove('active');
-    }
-  }
-
-  function updateFileInputIcons(fileElement, currentFilesCount) {
-    const icon1 = fileElement.querySelector('.order-processing-icon1');
-    const icon2 = fileElement.querySelector('.order-processing-icon2');
-    if (!icon1 || !icon2) return;
-    if (currentFilesCount === 0) {
-      icon1.style.display = '';
-      icon2.style.display = 'none';
-    } else if (currentFilesCount < 6) {
-      icon1.style.display = 'none';
-      icon2.style.display = '';
-    } else {
-      icon1.style.display = 'none';
-      icon2.style.display = 'none';
-    }
-  }
-
-  function updateFileVisibility(fileElement, currentFilesCount) {
-    if (currentFilesCount >= 6) {
-      fileElement.style.display = 'none';
-    } else {
-      fileElement.style.display = '';
-    }
-  }
-
-  function moveFileElement(fileElement, previewContainer, moveToPreview) {
-    const photoBlock = fileElement.closest('.popup-order-processing__photo');
-    if (!photoBlock) return;
-    if (moveToPreview) {
-      if (fileElement.parentNode !== previewContainer) {
-        previewContainer.appendChild(fileElement);
-      }
-    } else {
-      if (fileElement.parentNode !== photoBlock) {
-        const preview = photoBlock.querySelector('.popup-order-processing__preview');
-        if (preview) {
-          photoBlock.insertBefore(fileElement, preview.nextSibling);
-        } else {
-          photoBlock.appendChild(fileElement);
-        }
-      }
-    }
-  }
-
-  function updateFilePosition(fileElement, previewContainer) {
-    const filesCount = previewContainer.querySelectorAll('.preview-item').length;
-    if (filesCount > 0 && filesCount < 6) {
-      moveFileElement(fileElement, previewContainer, true);
-      fileElement.style.display = '';
-    } else if (filesCount >= 6) {
-      fileElement.style.display = 'none';
-    } else {
-      moveFileElement(fileElement, previewContainer, false);
-      fileElement.style.display = '';
-    }
-  }
-
-  const photoBlocks = document.querySelectorAll('.popup-order-processing__photo');
-  if (photoBlocks.length === 0) return;
-
-  photoBlocks.forEach(photoBlock => {
-    const fileElement = photoBlock.querySelector('.popup-order-processing__file');
-    const previewContainer = photoBlock.querySelector('.popup-order-processing__preview');
-    const input = fileElement?.querySelector('input[type="file"]');
-    if (!fileElement || !previewContainer || !input) return;
-
-    input.setAttribute('multiple', 'multiple');
-    input.setAttribute('accept', 'image/*');
-    input.removeEventListener('change', handleFileChange);
-    input.addEventListener('change', handleFileChange);
-
-    function handleFileChange(e) {
-      const files = Array.from(e.target.files);
-      const currentFiles = previewContainer.querySelectorAll('.preview-item').length;
-      const remainingSlots = 6 - currentFiles;
-      if (files.length > remainingSlots) {
-        alert(`Можно загрузить не более ${remainingSlots} файлов`);
-        input.value = '';
-        return;
-      }
-      let addedCount = 0;
-      files.forEach(file => {
-        if (file.type.startsWith('image/')) {
-          if (currentFiles + addedCount < 6) {
-            createPreviewItem(file, fileElement, previewContainer, photoBlock);
-            addedCount++;
-          }
-        } else {
-          alert('Пожалуйста, выберите изображение');
-        }
-      });
-      input.value = '';
-    }
-
-    function createPreviewItem(file, fileElement, previewContainer, photoBlock) {
-      const previewItem = document.createElement('div');
-      previewItem.className = 'preview-item';
-      previewItem.addEventListener('click', function (event) {
-        event.stopPropagation();
-      });
-      const img = document.createElement('img');
-      img.className = 'preview-image';
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        img.src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-      const fileName = document.createElement('span');
-      fileName.className = 'preview-filename';
-      let displayName = file.name;
-      if (displayName.length > 20) {
-        const nameParts = displayName.split('.');
-        const extension = nameParts.pop();
-        const nameWithoutExt = nameParts.join('.');
-        displayName = nameWithoutExt.substring(0, 15) + '...' + extension;
-      }
-      fileName.textContent = displayName;
-      const removeBtn = document.createElement('button');
-      removeBtn.className = 'preview-remove';
-      removeBtn.addEventListener('click', function (event) {
-        event.stopPropagation();
-        event.preventDefault();
-        previewItem.remove();
-        const currentFilesCount = previewContainer.querySelectorAll('.preview-item').length;
-        updateFileInputIcons(fileElement, currentFilesCount);
-        updatePreviewActiveState(previewContainer);
-        updateFilePosition(fileElement, previewContainer);
-        updateFileVisibility(fileElement, currentFilesCount);
-      });
-      previewItem.appendChild(img);
-      previewItem.appendChild(fileName);
-      previewItem.appendChild(removeBtn);
-      if (fileElement.parentNode === previewContainer) {
-        previewContainer.insertBefore(previewItem, fileElement);
-      } else {
-        previewContainer.appendChild(previewItem);
-      }
-      const currentFilesCount = previewContainer.querySelectorAll('.preview-item').length;
-      updateFileInputIcons(fileElement, currentFilesCount);
-      updatePreviewActiveState(previewContainer);
-      updateFilePosition(fileElement, previewContainer);
-      updateFileVisibility(fileElement, currentFilesCount);
-    }
-
-    const initialFilesCount = previewContainer.querySelectorAll('.preview-item').length;
-    updateFileInputIcons(fileElement, initialFilesCount);
-    updatePreviewActiveState(previewContainer);
-    updateFilePosition(fileElement, previewContainer);
-    updateFileVisibility(fileElement, initialFilesCount);
-  });
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-  if (document.querySelector('.services-popup')) {
-    initFilePreview();
-  }
-  if (document.querySelector('.popup-order-processing')) {
-    initOrderProcessingFilePreview();
-  }
-});
-
-//========================================================================================================================================================
-
-const copyButtons = document.querySelectorAll('.block-orders-info1__copy');
-
-if (copyButtons) {
-  copyButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const parentBlock = this.closest('.block-orders-info1__number');
-      const numberSpan = parentBlock.querySelector('span');
-      const textToCopy = numberSpan.textContent.trim();
-
-      navigator.clipboard.writeText(textToCopy).then(() => {
-
-        this.classList.add('copied');
-        setTimeout(() => {
-          this.classList.remove('copied');
-        }, 500);
-      }).catch(err => {
-        console.error('Ошибка копирования:', err);
-      });
-    });
-  });
-}
-
-//========================================================================================================================================================
-
-const orderActions = document.querySelectorAll('.order-actions');
-
-if (orderActions) {
-  orderActions.forEach(actions => {
-    const button = actions.querySelector('.order-actions__button');
-
-    if (button) {
-      button.addEventListener('click', function (event) {
-        event.stopPropagation();
-
-        const isActive = actions.classList.contains('active');
-
-        orderActions.forEach(item => {
-          item.classList.remove('active');
-        });
-
-        if (!isActive) {
-          actions.classList.add('active');
-        }
-      });
-    }
-  });
-
-  document.addEventListener('click', function (event) {
-    const activeBlock = document.querySelector('.order-actions.active');
-    if (activeBlock && !activeBlock.contains(event.target)) {
-      activeBlock.classList.remove('active');
-    }
-  });
-}
-
-//========================================================================================================================================================
-
-const detailButtons = document.querySelectorAll('.order-details');
-
-if (detailButtons.length > 0) {
-  detailButtons.forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const currentColumn = this.closest('.block-orders__column');
-
-      const cartTables = currentColumn.querySelector('.cart-tables');
-
-      if (!cartTables) return;
-
-      const isActive = currentColumn.classList.contains('active');
-
-      const duration = 500;
-
-      if (isActive) {
-        _slideUp(cartTables, duration);
-        currentColumn.classList.remove('active');
-      } else {
-        document.querySelectorAll('.block-orders__column.active').forEach(column => {
-          const otherCartTables = column.querySelector('.cart-tables');
-          if (otherCartTables) {
-            _slideUp(otherCartTables, duration);
-          }
-          column.classList.remove('active');
-        });
-
-        _slideDown(cartTables, duration);
-        currentColumn.classList.add('active');
-      }
-    });
-  });
-}
-
-//========================================================================================================================================================
-
-const radioButtons = document.querySelectorAll('input[name="option"]');
-
-if (radioButtons.length > 0 && document.querySelector('.options__column')) {
-
-  function updateCheckedClass() {
-    document.querySelectorAll('.options__column').forEach(column => {
-      column.classList.remove('checked');
-    });
-
-    const checkedRadio = document.querySelector('input[name="option"]:checked');
-    if (checkedRadio) {
-      const parentColumn = checkedRadio.closest('.options__column');
-      if (parentColumn) {
-        parentColumn.classList.add('checked');
-      }
-    }
-  }
-
-  updateCheckedClass();
-
-  radioButtons.forEach(radio => {
-    radio.addEventListener('change', updateCheckedClass);
-  });
-
-}
-
-//========================================================================================================================================================
-
-const formsPopup = document.querySelectorAll('.popup-approval-layouts__form');
-
-if (formsPopup) {
-  formsPopup.forEach(form => {
-    const selectElement = form.querySelector('.select._select-active select');
-    const textareaContainer = form.querySelector('.popup-approval-layouts__input');
-
-    if (selectElement && textareaContainer) {
-      function updateTextareaVisibility() {
-        if (selectElement.value === '2') {
-          textareaContainer.classList.add('active');
-        } else {
-          textareaContainer.classList.remove('active');
-        }
-      }
-
-      selectElement.addEventListener('change', updateTextareaVisibility);
-      updateTextareaVisibility();
-    }
-  });
-}
-
-//========================================================================================================================================================
-
-const locationElements = document.querySelectorAll('.header-top-location');
-if (locationElements) {
-  function updateHtmlClass() {
-    const hasActiveLocation = Array.from(locationElements).some(el => el.classList.contains('active'));
-
-    if (hasActiveLocation) {
-      document.documentElement.classList.add('location-open');
-
-      closeMenuIfOpen();
-    } else {
-      document.documentElement.classList.remove('location-open');
-    }
-  }
-
-  function closeMenuIfOpen() {
-    if (document.documentElement.classList.contains('menu-open')) {
-      document.documentElement.classList.remove('menu-open');
-
-      const menuElements = document.querySelectorAll('.header-menu');
-      menuElements.forEach(el => el.classList.remove('active'));
-
-      const burgerButton = document.querySelector('.burger-button');
-      if (burgerButton && burgerButton.classList.contains('active')) {
-        burgerButton.classList.remove('active');
-      }
-    }
-  }
-
-  locationElements.forEach(function (element) {
-    const button = element.querySelector('.header-top-location__button');
-
-    if (button) {
-      button.addEventListener('click', function (event) {
-        event.stopPropagation();
-
-        element.classList.toggle('active');
-
-        updateHtmlClass();
-      });
-    }
-  });
-
-  document.addEventListener('click', function (event) {
-    let shouldClose = true;
-
-    locationElements.forEach(function (element) {
-      if (element.contains(event.target)) {
-        shouldClose = false;
-      }
-    });
-
-    if (shouldClose) {
-      locationElements.forEach(function (element) {
-        element.classList.remove('active');
-      });
-      updateHtmlClass();
-    }
-  });
-
-  updateHtmlClass();
-}
-
-//========================================================================================================================================================
-
-const filterTitles = document.querySelectorAll('.block-orders-top__title');
-const orderColumns = document.querySelectorAll('.block-orders__column');
-
-if (filterTitles) {
-  function filterOrders(selectedFilter) {
-    filterTitles.forEach(item => item.classList.remove('active'));
-
-    const activeTitle = Array.from(filterTitles).find(title => title.dataset.filter === selectedFilter);
-    if (activeTitle) {
-      activeTitle.classList.add('active');
-    }
-
-    orderColumns.forEach(column => {
-      const columnFilters = column.dataset.filter;
-
-      if (selectedFilter === 'all') {
-        column.classList.remove('hide');
-      } else {
-        if (columnFilters && columnFilters.split(',').map(f => f.trim()).includes(selectedFilter)) {
-          column.classList.remove('hide');
-        } else {
-          column.classList.add('hide');
-        }
+  if (menuContainer) {
+    menuContainer.addEventListener('mouseleave', function (e) {
+      if (!menuContainer.contains(e.relatedTarget)) {
+        activeItem = null;
+        setImage(null);
       }
     });
   }
 
-  filterTitles.forEach(title => {
-    title.addEventListener('click', function () {
-      const filterValue = this.dataset.filter;
-      filterOrders(filterValue);
-    });
-  });
+  document.addEventListener('mouseover', function (e) {
+    const isOverMenu = e.target.closest('ul, .header-catalog__image, .header-catalog-menu1, .header-catalog-menu2, .header-catalog-menu3');
 
-  const initialActive = document.querySelector('.block-orders-top__title.active');
-  if (initialActive) {
-    filterOrders(initialActive.dataset.filter);
-  } else {
-    filterOrders('all');
-  }
-}
-
-//========================================================================================================================================================
-
-if (document.querySelector('.images-product')) {
-  const thumbsSwiper = new Swiper('.images-product__thumb', {
-    observer: true,
-    observeParents: true,
-    slidesPerView: 4,
-    spaceBetween: 5,
-    speed: 400,
-    preloadImages: true,
-    navigation: {
-      prevEl: '.images-product__arrow-prev',
-      nextEl: '.images-product__arrow-next',
-    },
-    breakpoints: {
-      1200: {
-        slidesPerView: 6,
-        spaceBetween: 20,
-      },
-    },
-  });
-
-  const mainThumbsSwiper = new Swiper('.images-product__slider', {
-    thumbs: {
-      swiper: thumbsSwiper
-    },
-    observer: true,
-    observeParents: true,
-    slidesPerView: 1,
-    spaceBetween: 10,
-    speed: 400,
-    preloadImages: true,
-    navigation: {
-      prevEl: '.images-product__arrow-prev',
-      nextEl: '.images-product__arrow-next',
-    },
-  });
-}
-
-//========================================================================================================================================================
-
-function createCustomSelect(placeholder) {
-  const templateSelect = document.querySelector('#car-modal .select');
-  if (!templateSelect) return null;
-
-  const newSelectWrapper = document.createElement('div');
-  newSelectWrapper.className = 'select';
-
-  const newSelect = document.createElement('select');
-  newSelect.name = 'form[]';
-  newSelect.className = 'select';
-  newSelect.setAttribute('hidden', '');
-
-  const uniqueId = Date.now() + Math.floor(Math.random() * 1000);
-  newSelect.setAttribute('data-id', uniqueId);
-  newSelect.setAttribute('data-placeholder', placeholder);
-  newSelect.setAttribute('data-speed', '150');
-
-  const options = [
-    { value: '', label: placeholder, selected: true, disabled: true, hidden: true },
-    { value: '1', label: 'Пункт №1' },
-    { value: '2', label: 'Пункт №2' },
-    { value: '3', label: 'Пункт №3' },
-    { value: '4', label: 'Пункт №4' }
-  ];
-
-  options.forEach(opt => {
-    const option = document.createElement('option');
-    option.value = opt.value;
-    option.textContent = opt.label;
-
-    if (opt.value === '') {
-      option.setAttribute('data-show', '');
-      option.setAttribute('data-label', '');
-      option.setAttribute('selected', '');
-      option.disabled = true;
-      option.hidden = true;
-    }
-
-    newSelect.appendChild(option);
-  });
-
-  const selectBody = document.createElement('div');
-  selectBody.className = 'select__body';
-
-  const selectTitle = document.createElement('button');
-  selectTitle.type = 'button';
-  selectTitle.className = 'select__title';
-
-  const selectLabel = document.createElement('span');
-  selectLabel.className = 'select__label';
-  selectLabel.textContent = placeholder;
-
-  const selectValue = document.createElement('span');
-  selectValue.className = 'select__value';
-
-  const selectContent = document.createElement('span');
-  selectContent.className = 'select__content';
-
-  selectValue.appendChild(selectContent);
-  selectTitle.appendChild(selectLabel);
-  selectTitle.appendChild(selectValue);
-
-  const selectOptions = document.createElement('div');
-  selectOptions.className = 'select__options';
-  selectOptions.setAttribute('hidden', '');
-
-  const selectScroll = document.createElement('div');
-  selectScroll.className = 'select__scroll';
-
-  options.slice(1).forEach(opt => {
-    const optionBtn = document.createElement('button');
-    optionBtn.className = 'select__option';
-    optionBtn.setAttribute('data-value', opt.value);
-    optionBtn.type = 'button';
-    optionBtn.textContent = opt.label;
-
-    optionBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-
-      const parentSelect = this.closest('.select');
-      if (!parentSelect) return;
-
-      const hiddenSelect = parentSelect.querySelector('select');
-      const titleBtn = parentSelect.querySelector('.select__title');
-      const labelSpan = parentSelect.querySelector('.select__label');
-      const contentSpan = parentSelect.querySelector('.select__content');
-
-      if (hiddenSelect) {
-        Array.from(hiddenSelect.options).forEach(opt => {
-          opt.selected = opt.value === this.dataset.value;
-        });
-      }
-
-      if (labelSpan) labelSpan.textContent = this.textContent;
-      if (contentSpan) contentSpan.textContent = this.textContent;
-
-      const optionsDiv = parentSelect.querySelector('.select__options');
-      if (optionsDiv) {
-        optionsDiv.setAttribute('hidden', '');
-      }
-
-      if (hiddenSelect) {
-        hiddenSelect.dispatchEvent(new Event('change', { bubbles: true }));
-      }
-    });
-
-    selectScroll.appendChild(optionBtn);
-  });
-
-  selectOptions.appendChild(selectScroll);
-  selectBody.appendChild(selectTitle);
-  selectBody.appendChild(selectOptions);
-
-  newSelectWrapper.appendChild(newSelect);
-  newSelectWrapper.appendChild(selectBody);
-
-  selectTitle.addEventListener('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    const optionsDiv = this.nextElementSibling;
-    if (!optionsDiv) return;
-
-    const isHidden = optionsDiv.hasAttribute('hidden');
-
-    document.querySelectorAll('.select__options:not([hidden])').forEach(el => {
-      if (el !== optionsDiv) {
-        el.setAttribute('hidden', '');
-      }
-    });
-
-    if (isHidden) {
-      optionsDiv.removeAttribute('hidden');
-    } else {
-      optionsDiv.setAttribute('hidden', '');
+    if (!isOverMenu && activeItem) {
+      activeItem = null;
+      setImage(null);
     }
   });
 
-  return newSelectWrapper;
-}
-
-function createCarColumn(carData) {
-  const column = document.createElement('div');
-  column.className = 'car-modal__column';
-
-  column.innerHTML = `
-            <div class="car-modal__close">
-                <img src="img/icons/close3.svg" alt="">
-            </div>
-            <div class="car-modal__descr1">
-                <div class="car-modal__image">
-                    <img src="${carData.image}" alt="${carData.name}">
-                </div>
-                <div class="car-modal__titles">
-                    <div class="car-modal__name">${carData.name}</div>
-                    <div class="car-modal__price">${carData.price}</div>
-                </div>
-                <div class="car-modal__selects" id="selects-container-${Date.now()}">
-                </div>
-            </div>
-        `;
-
-  const selectsContainer = column.querySelector('.car-modal__selects');
-
-  const placeholders = ['Назначение', 'Исполнение', 'Цвет'];
-  placeholders.forEach(placeholder => {
-    const customSelect = createCustomSelect(placeholder);
-    if (customSelect) {
-      selectsContainer.appendChild(customSelect);
+  document.addEventListener('mouseleave', function () {
+    if (activeItem) {
+      activeItem = null;
+      setImage(null);
     }
   });
-
-  const closeBtn = column.querySelector('.car-modal__close');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      column.remove();
-    });
-  }
-
-  return column;
 }
-
-const addCarPopup = document.getElementById('add-car');
-if (addCarPopup) {
-  const carCards = document.querySelectorAll('#add-car .car-card');
-  carCards.forEach(card => {
-    card.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const nameElement = this.querySelector('.car-card__name');
-      const priceElement = this.querySelector('.car-card__price');
-      const imageElement = this.querySelector('.car-card__image img');
-
-      if (!nameElement || !priceElement || !imageElement) return;
-
-      const carName = nameElement.textContent.trim();
-      const carPrice = priceElement.textContent.trim();
-      const carImage = imageElement.src;
-
-      const carData = {
-        name: carName,
-        price: carPrice,
-        image: carImage
-      };
-
-      const newCarColumn = createCarColumn(carData);
-
-      const carModalColumns = document.querySelector('#car-modal .car-modal__columns');
-
-      if (carModalColumns && newCarColumn) {
-        const addCarLink = carModalColumns.querySelector('.add-car-column');
-
-        if (addCarLink) {
-          carModalColumns.insertBefore(newCarColumn, addCarLink);
-        } else {
-          carModalColumns.appendChild(newCarColumn);
-        }
-      }
-
-      if (addCarPopup) {
-        addCarPopup.classList.remove('open');
-        addCarPopup.setAttribute('aria-hidden', 'true');
-      }
-
-      const carModal = document.getElementById('car-modal');
-      if (carModal && carModal.getAttribute('aria-hidden') === 'true') {
-        carModal.classList.add('open');
-        carModal.setAttribute('aria-hidden', 'false');
-      }
-    });
-  });
-}
-
-const carModal = document.getElementById('car-modal');
-if (carModal) {
-  document.querySelectorAll('#car-modal .car-modal__close').forEach(closeBtn => {
-    closeBtn.addEventListener('click', function (e) {
-      e.stopPropagation();
-      e.preventDefault();
-      const column = this.closest('.car-modal__column');
-      if (column && !column.classList.contains('add-car-column')) {
-        column.remove();
-      }
-    });
-  });
-}
-
-document.addEventListener('click', function (e) {
-  if (!e.target.closest('.select')) {
-    document.querySelectorAll('.select__options:not([hidden])').forEach(el => {
-      if (el) {
-        el.setAttribute('hidden', '');
-      }
-    });
-  }
-});
 
 //========================================================================================================================================================
 
@@ -3280,11 +2413,6 @@ if (calendars.length > 0) {
           div.classList.add("isCurrent");
         }
 
-        if (day.timestamp < todayTimestamp) {
-          div.classList.add("disabled");
-          div.style.pointerEvents = "none";
-        }
-
         span.classList.add("cell_item");
         span.innerText = day.date;
         div.setAttribute("data-timestamp", day.timestamp);
@@ -3367,8 +2495,9 @@ if (calendars.length > 0) {
     calendarMain.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      const target = e.target.closest(".cell_wrapper.current");
-      if (!target || target.classList.contains("disabled")) {
+      const target = e.target.closest(".cell_wrapper");
+
+      if (!target) {
         return;
       }
 
@@ -3428,120 +2557,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
-
-//========================================================================================================================================================
-
-const calendarBlocks = document.querySelectorAll('.block-cart-calendar');
-
-if (calendarBlocks) {
-  calendarBlocks.forEach(block => {
-    const button = block.querySelector('.block-cart-calendar__button');
-
-    if (button) {
-      button.addEventListener('click', function (e) {
-        e.stopPropagation();
-        block.classList.toggle('active');
-      });
-    }
-  });
-}
-
-//========================================================================================================================================================
-
-function initServicesPopup() {
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        const popup = mutation.target;
-        if (popup.classList.contains('popup_show')) {
-          setTimeout(() => {
-            initPopupHandlers();
-          }, 100);
-        }
-      }
-    });
-  });
-
-  const popups = document.querySelectorAll('.services-popup');
-  if (popups.length > 0) {
-    popups.forEach(popup => {
-      observer.observe(popup, { attributes: true });
-    });
-  }
-
-  const domObserver = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      mutation.addedNodes.forEach(node => {
-        if (node.nodeType === 1 && node.classList && node.classList.contains('services-popup')) {
-          observer.observe(node, { attributes: true });
-
-          if (node.classList.contains('popup_show')) {
-            setTimeout(() => {
-              initPopupHandlers();
-            }, 100);
-          }
-        }
-      });
-    });
-  });
-
-  if (document.body) {
-    domObserver.observe(document.body, { childList: true, subtree: true });
-  }
-
-  function initPopupHandlers() {
-    const activePopup = document.querySelector('.services-popup.popup_show');
-
-    if (!activePopup) return false;
-
-    const mainImage = activePopup.querySelector('.services-popup__image img');
-    const colorItems = activePopup.querySelectorAll('.services-popup-color');
-
-    if (!mainImage || colorItems.length === 0) return false;
-
-    const originalImageSrc = mainImage.src;
-
-    function changeImageSmooth(newSrc) {
-      if (mainImage.src === newSrc) return;
-
-      mainImage.classList.add('fade-out');
-
-      setTimeout(() => {
-        mainImage.src = newSrc;
-        mainImage.classList.remove('fade-out');
-        mainImage.classList.add('fade-in');
-
-        setTimeout(() => {
-          mainImage.classList.remove('fade-in');
-        }, 100);
-      }, 100);
-    }
-
-    colorItems.forEach(item => {
-      item.removeEventListener('mouseenter', handleMouseEnter);
-      item.removeEventListener('mouseleave', handleMouseLeave);
-
-      item.addEventListener('mouseenter', handleMouseEnter);
-      item.addEventListener('mouseleave', handleMouseLeave);
-    });
-
-    function handleMouseEnter() {
-      const newImageSrc = this.dataset.image;
-      if (newImageSrc) {
-        changeImageSmooth(newImageSrc);
-      }
-    }
-
-    function handleMouseLeave() {
-      changeImageSmooth(originalImageSrc);
-    }
-
-    return true;
-  }
-
-  if (document.querySelector('.services-popup.popup_show')) {
-    initPopupHandlers();
-  }
-}
-initServicesPopup();
-*/
