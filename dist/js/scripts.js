@@ -1634,7 +1634,7 @@ if (filterButton) {
 
 //========================================================================================================================================================
 
-const filterIcons = document.querySelectorAll('.block-products-filter__icon');
+const filterIcons = document.querySelectorAll('.filter-icon');
 
 if (filterIcons) {
   function removeAllOpenClasses() {
@@ -1647,12 +1647,19 @@ if (filterIcons) {
     });
   }
 
+  function checkScreenSizeAndReset() {
+    if (window.innerWidth <= 768) {
+      removeAllOpenClasses();
+    }
+  }
+
+  window.addEventListener('resize', checkScreenSizeAndReset);
+  checkScreenSizeAndReset();
+
   filterIcons.forEach(icon => {
     icon.addEventListener('click', function () {
       removeAllOpenClasses();
-
       removeActiveFromAll();
-
       this.classList.add('active');
 
       if (this.classList.contains('filter-icon-tile')) {
@@ -1675,6 +1682,14 @@ if (telephone) {
     "mask": "+7 (999) 999 - 99 - 99",
     "showMaskOnHover": false,
   }).mask(telephone);
+}
+
+const telephone2 = document.querySelectorAll('.telephone2');
+if (telephone2) {
+  Inputmask({
+    "mask": "(999) 999 - 99 - 99",
+    "showMaskOnHover": false,
+  }).mask(telephone2);
 }
 
 //========================================================================================================================================================
@@ -2557,3 +2572,165 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+//========================================================================================================================================================
+
+//Спойлер
+function spollers() {
+  const spollersArray = document.querySelectorAll("[data-spollers]");
+  if (spollersArray.length > 0) {
+    const spollersRegular = Array.from(spollersArray).filter((function (item, index, self) {
+      return !item.dataset.spollers.split(",")[0];
+    }));
+    if (spollersRegular.length) initSpollers(spollersRegular);
+
+    spollersArray.forEach(spollersBlock => {
+      const mediaQuery = spollersBlock.dataset.spollers;
+      if (mediaQuery) {
+        const [maxWidth, type] = mediaQuery.split(",");
+        const width = parseInt(maxWidth);
+
+        if (type === "max" && window.innerWidth <= width) {
+          if (!spollersBlock.classList.contains("_spoller-init")) {
+            initSpollers([spollersBlock]);
+          }
+        } else if (type === "max" && window.innerWidth > width) {
+          if (spollersBlock.classList.contains("_spoller-init")) {
+            spollersBlock.classList.remove("_spoller-init");
+            initSpollerBody(spollersBlock, false);
+            spollersBlock.removeEventListener("click", setSpollerAction);
+          }
+        }
+      }
+    });
+
+    function initSpollers(spollersArray, matchMedia = false) {
+      spollersArray.forEach((spollersBlock => {
+        spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
+        if (matchMedia.matches || !matchMedia) {
+          spollersBlock.classList.add("_spoller-init");
+          initSpollerBody(spollersBlock);
+          spollersBlock.addEventListener("click", setSpollerAction);
+
+          initCloseButtons(spollersBlock);
+        } else {
+          spollersBlock.classList.remove("_spoller-init");
+          initSpollerBody(spollersBlock, false);
+          spollersBlock.removeEventListener("click", setSpollerAction);
+        }
+      }));
+    }
+
+    function initSpollerBody(spollersBlock, hideSpollerBody = true) {
+      let spollerTitles = spollersBlock.querySelectorAll("[data-spoller]");
+      if (spollerTitles.length) {
+        spollerTitles = Array.from(spollerTitles).filter((item => item.closest("[data-spollers]") === spollersBlock));
+        spollerTitles.forEach((spollerTitle => {
+          if (hideSpollerBody) {
+            spollerTitle.removeAttribute("tabindex");
+            if (!spollerTitle.classList.contains("_spoller-active")) {
+              spollerTitle.nextElementSibling.hidden = true;
+            }
+          } else {
+            spollerTitle.setAttribute("tabindex", "-1");
+            spollerTitle.nextElementSibling.hidden = false;
+          }
+        }));
+      }
+    }
+
+    function initCloseButtons(spollersBlock) {
+      const closeButtons = spollersBlock.querySelectorAll('.cabinet-orders-spollers__button');
+
+      closeButtons.forEach(button => {
+        button.removeEventListener('click', closeSpollerHandler);
+        button.addEventListener('click', closeSpollerHandler);
+      });
+    }
+
+    function closeSpollerHandler(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const button = e.currentTarget;
+      const spollersBlock = button.closest('[data-spollers]');
+      const spollerItem = button.closest('.cabinet-orders-spollers__item');
+
+      if (spollersBlock && spollerItem) {
+        const spollerTitle = spollerItem.querySelector('[data-spoller]');
+
+        if (spollerTitle && spollerTitle.classList.contains('_spoller-active')) {
+          const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+
+          spollerTitle.classList.remove('_spoller-active');
+          spollerItem.classList.remove('_spoller-active');
+
+          const contentBlock = spollerTitle.nextElementSibling;
+          _slideUp(contentBlock, spollerSpeed);
+        }
+      }
+    }
+
+    function setSpollerAction(e) {
+      const el = e.target;
+      if (el.closest("[data-spoller]")) {
+        const spollerTitle = el.closest("[data-spoller]");
+
+        const spollerItem = spollerTitle.closest(".spollers__item, .cabinet-orders-spollers__item");
+        const spollersBlock = spollerTitle.closest("[data-spollers]");
+
+        const oneSpoller = spollersBlock.hasAttribute("data-one-spoller");
+        const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+
+        if (!spollersBlock.querySelectorAll("._slide").length) {
+          if (oneSpoller && !spollerTitle.classList.contains("_spoller-active")) {
+            hideSpollersBody(spollersBlock);
+          }
+
+          spollerTitle.classList.toggle("_spoller-active");
+          if (spollerItem) spollerItem.classList.toggle("_spoller-active");
+
+          const contentBlock = spollerTitle.nextElementSibling;
+          _slideToggle(contentBlock, spollerSpeed);
+
+          e.preventDefault();
+        }
+      }
+    }
+
+    function hideSpollersBody(spollersBlock) {
+      const spollerActiveTitle = spollersBlock.querySelector("[data-spoller]._spoller-active");
+      const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+      if (spollerActiveTitle && !spollersBlock.querySelectorAll("._slide").length) {
+        const spollerItem = spollerActiveTitle.closest(".spollers__item, .cabinet-orders-spollers__item");
+
+        spollerActiveTitle.classList.remove("_spoller-active");
+        if (spollerItem) spollerItem.classList.remove("_spoller-active");
+        _slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
+      }
+    }
+
+    const spollersClose = document.querySelectorAll("[data-spoller-close]");
+    if (spollersClose.length) {
+      document.addEventListener("click", (function (e) {
+        const el = e.target;
+        if (!el.closest("[data-spollers]")) {
+          spollersClose.forEach((spollerClose => {
+            const spollersBlock = spollerClose.closest("[data-spollers]");
+            const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+            spollerClose.classList.remove("_spoller-active");
+
+            const spollerItem = spollerClose.closest(".spollers__item, .cabinet-orders-spollers__item");
+            if (spollerItem) spollerItem.classList.remove("_spoller-active");
+
+            _slideUp(spollerClose.nextElementSibling, spollerSpeed);
+          }));
+        }
+      }));
+    }
+  }
+}
+spollers();
+
+//========================================================================================================================================================
+
