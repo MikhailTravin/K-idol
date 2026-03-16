@@ -4349,7 +4349,8 @@ a {
 }
 @media (max-width: 600px) {
   .block-forms__pic1 {
-    height: 327px;
+    height: auto;
+    width: 300px;
   }
 }
 @media (max-width: 440px) {
