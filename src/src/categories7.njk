@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Категории - разное2</title>
+    {% include 'blocks/head.njk' %}
+</head>
+
+<body class="preload mp">
+    <div class="main-wrapper-outer">
+        {% include 'blocks/header.njk' %}
+        <main class="main">
+
+            <div class="block-intro-banner block-intro-categories3 categories7">
+                <div class="container">
+                    <div class="block-intro-banner__content">
+                        <img src="img/icons/logo3.svg" alt="" class="block-intro-banner__logo1">
+                        <svg aria-hidden="true" width="46" height="74" class="block-intro-banner__icon1">
+                            <use xlink:href="img/sprite.svg#gesture"></use>
+                        </svg>
+                        <svg aria-hidden="true" width="29" height="29" class="block-intro-banner__icon2">
+                            <use xlink:href="img/sprite.svg#star1"></use>
+                        </svg>
+                        <svg aria-hidden="true" width="35" height="29" class="block-intro-banner__icon3">
+                            <use xlink:href="img/sprite.svg#heart1"></use>
+                        </svg>
+                        <svg aria-hidden="true" width="17" height="17" class="block-intro-banner__icon4">
+                            <use xlink:href="img/sprite.svg#star1"></use>
+                        </svg>
+                        <svg aria-hidden="true" width="17" height="17" class="block-intro-banner__icon5">
+                            <use xlink:href="img/sprite.svg#star1"></use>
+                        </svg>
+                        <svg aria-hidden="true" width="17" height="17" class="block-intro-banner__icon6">
+                            <use xlink:href="img/sprite.svg#star1"></use>
+                        </svg>
+                        <div class="block-intro-banner__body">
+                            <div class="block-intro-banner__item">
+                                <h1 class="title2">
+                                    разное
+                                    <span class="block-intro-banner__text">머리카락</span>
+                                </h1>
+                                <p>
+                                    В этом разделе представлены новинки каталога товаров в разных категориях.
+                                    <br>Удачных покупок!
+                                </p>
+                            </div>
+                            <div class="block-intro-banner__titles">
+                                <img src="img/image20.webp" alt="" class="block-intro-banner__pic1">
+                                <div class="block-intro-banner__logo2">
+                                    <img src="img/icons/logo6.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Главная
+                                <svg aria-hidden="true" width="23" height="8">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Новинки
+                                <svg aria-hidden="true" width="23" height="8">
+                                    <use xlink:href="img/sprite.svg#arrow2"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li><span>Уход за лицом</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="block-products">
+                <div class="container">
+                    <div class="block-products-filter">
+                        <div class="block-products-filter__left">
+                            <div class="filter">
+                                <div class="filter__button">
+                                    <img loading="lazy" src="img/icons/filter.svg" alt="" class="filter-icon-desc">
+                                    <img loading="lazy" src="img/icons/filter2.svg" alt="" class="filter-icon-mob">
+                                    <span>Фильтры</span>
+                                </div>
+                                <div class="filter__dropdowm">
+                                    <div class="filter__top">
+                                        <div class="filter__title">
+                                            <img loading="lazy" src="img/icons/filter2.svg" alt="">
+                                            <span>Фильтр</span>
+                                        </div>
+                                        <div class="filter__close">
+                                            <svg aria-hidden="true" width="11" height="11">
+                                                <use xlink:href="img/sprite.svg#close"></use>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="filter__body">
+                                        <div class="filter__column filter-column-rating">
+                                            <div class="filter__titles">
+                                                <span>Цена <span class="fw">(от до)</span></span>
+                                            </div>
+                                            <div class="filter-rating">
+                                                <div class="filter-rating__inputs">
+                                                    <div class="filter-rating__input">
+                                                        <input id="price-start" autocomplete="off" type="text"
+                                                            name="form[]" placeholder="123">
+                                                    </div>
+                                                    <div class="filter-rating__input">
+                                                        <input id="price-end" autocomplete="off" type="text"
+                                                            name="form[]" placeholder="12 345">
+                                                    </div>
+                                                </div>
+                                                <div class="filter-rating__range"></div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__column">
+                                            <div class="filter__titles">
+                                                <span>Бренд</span>
+                                                <div class="filter__icon">
+                                                    <svg aria-hidden="true" width="14" height="14">
+                                                        <use xlink:href="img/sprite.svg#star1"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="search">
+                                                <input autocomplete="off" type="text" name="form[]"
+                                                    placeholder="Поиск по брендам">
+                                                <div class="search__button">
+                                                    <img src="img/icons/search.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div data-simplebar class="filter__simblebar">
+                                                <div class="filter__checkboxes">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="1"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                ABIB
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="2"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                AHC
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="3"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                Anua
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="4"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                Ayoume
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="5"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                ABIB
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="6"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                AHC
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="7"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                Anua
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="8"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                Ayoume
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="9"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                ABIB
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="10"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                AHC
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="11"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                Anua
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="12"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                Ayoume
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__column">
+                                            <div class="filter__titles">
+                                                <span>Тип продукта</span>
+                                                <div class="filter__icon">
+                                                    <svg aria-hidden="true" width="14" height="14">
+                                                        <use xlink:href="img/sprite.svg#star1"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div data-showmore="items" class="filter__showmore">
+                                                <div data-showmore-content="10" class="filter__showmore-content">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="1"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                ампулы для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="2"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                бальзам для губ
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="3"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                бьюти-бокс
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="4"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                гель для глаз
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="5"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                гель для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="6"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                гидрофильное масло
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="7"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                крем для глаз
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="8"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                крем для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="9"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                маски для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="10"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                мыло для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="11"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                мыло для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="12"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                мыло для лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <button hidden data-showmore-button type="button" class="filter__more">
+                                                    <span>Показать еще 12 категории</span>
+                                                    <span>Скрыть</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="filter__column">
+                                            <div class="filter__titles">
+                                                <span>Результат</span>
+                                                <div class="filter__icon">
+                                                    <svg aria-hidden="true" width="14" height="14">
+                                                        <use xlink:href="img/sprite.svg#star1"></use>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <div class="filter-search">
+                                                <input autocomplete="off" type="text" name="form[]" placeholder="найти">
+                                            </div>
+                                            <div data-showmore="items" class="filter__showmore">
+                                                <div data-showmore-content="10" class="filter__showmore-content">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="1"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                восстановление
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="2"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                выравнивание тона
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="3"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                коррекция овала лица
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="4"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                матирование
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="5"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                неровная текстура кожи
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="6"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                от отечности
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="7"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                от темных кругов
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="8"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                отбеливание
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="9"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                отшелушивание
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="10"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                очищение
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="11"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                очищение
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="12"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                очищение
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <button hidden data-showmore-button type="button" class="filter__more">
+                                                    <span>Показать еще 12 категории</span>
+                                                    <span>Скрыть</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="filter__column">
+                                            <div class="filter__titles">
+                                                <span>Для кого</span>
+                                            </div>
+                                            <div data-showmore="items" class="filter__showmore">
+                                                <div data-showmore-content="10" class="filter__showmore-content">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="1"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                для подростков
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="2"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                женский
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="3"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                мужской
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="4"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                унисекс
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <button hidden data-showmore-button type="button" class="filter__more">
+                                                    <span>Показать еще 12 категории</span>
+                                                    <span>Скрыть</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="filter__column">
+                                            <div class="filter__titles">
+                                                <span>Область применения</span>
+                                            </div>
+                                            <div data-showmore="items" class="filter__showmore">
+                                                <div data-showmore-content="10" class="filter__showmore-content">
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="1"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                глаза
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="2"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                губы
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="3"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                лицо
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="4"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                нос
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                    <label class="checkbox">
+                                                        <input class="checkbox__input" type="checkbox" value="5"
+                                                            name="form[]">
+                                                        <span class="checkbox__label">
+                                                            <span class="checkbox__icon">
+                                                                <svg aria-hidden="true" width="10" height="6">
+                                                                    <use xlink:href="img/sprite.svg#check1"></use>
+                                                                </svg>
+                                                            </span>
+                                                            <span class="checkbox__text">
+                                                                ресницы
+                                                            </span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                                <button hidden data-showmore-button type="button" class="filter__more">
+                                                    <span>Показать еще 12 категории</span>
+                                                    <span>Скрыть</span></button>
+                                            </div>
+                                        </div>
+                                        <div class="filter__buttons">
+                                            <button type="button" class="btn btn-apply">
+                                                <span>Применить</span>
+                                                <svg aria-hidden="true" width="17" height="17">
+                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                </svg>
+                                            </button>
+                                            <button type="button" class="btn btn-transparent">
+                                                <span>Сбросить фильтр</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block-products-filter__sorting">
+                                <div class="block-products-filter__sorting-title">
+                                    Сортировать по:
+                                </div>
+                                <select name="form[]" class="select1">
+                                    <option value="1" selected>Популярности (Убывание)</option>
+                                    <option value="2">Пункт №2</option>
+                                    <option value="3">Пункт №3</option>
+                                    <option value="4">Пункт №4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="block-products-filter__right">
+                            <div class="block-products-filter__icon active filter-icon-tile">
+                                <svg aria-hidden="true" width="14" height="13">
+                                    <use xlink:href="img/sprite.svg#list1"></use>
+                                </svg>
+                            </div>
+                            <div class="block-products-filter__icon filter-icon-list">
+                                <svg aria-hidden="true" width="14" height="13">
+                                    <use xlink:href="img/sprite.svg#list2"></use>
+                                </svg>
+                            </div>
+                            <div class="block-products-filter__icon filter-icon-table">
+                                <svg aria-hidden="true" width="14" height="13">
+                                    <use xlink:href="img/sprite.svg#list3"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-products__content">
+                        <div class="block-products__cards">
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="badges">
+                                        <div class="badges__badge badge-black">HIT</div>
+                                        <div style="background: #f1d6be;" class="badges__badge badge-sale">- 14%</div>
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image5.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="badges">
+                                        <div style="background: #87555f;" class="badges__badge badge-pink">Заказ из
+                                            Кореи
+                                        </div>
+                                        <div style="background: #ab6671;" class="badges__badge badge-pink-light">NEW
+                                        </div>
+                                    </div>
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image9.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="badges">
+                                        <div style="background: #87555f;" class="badges__badge badge-pink">Заказ из
+                                            Кореи
+                                        </div>
+                                        <div style="background: #ab6671;" class="badges__badge badge-pink-light">NEW
+                                        </div>
+                                        <div class="badges__badge badge-black">HIT</div>
+                                        <div style="background: #f1d6be;" class="badges__badge badge-sale">- 14%</div>
+                                    </div>
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image17.webp" alt="">
+                                            </div>
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image17.webp" alt="">
+                                            </div>
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image17.webp" alt="">
+                                            </div>
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image17.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image18.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="badges">
+                                        <div style="background: #000;" class="badges__badge badge-pink">
+                                            Нет в наличии
+                                        </div>
+                                    </div>
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image11.webp" alt="">
+                                            </div>
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image11.webp" alt="">
+                                            </div>
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image11.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image12.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image15.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image19.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image16.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image20.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image18.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image17.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image15.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image21.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image19.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-card1">
+                                <div class="product-card1__images">
+                                    <div class="favorites">
+                                        <img loading="lazy" src="img/icons/heart2.svg" alt="" class="favorites__icon1">
+                                        <img loading="lazy" src="img/icons/heart3.svg" alt="" class="favorites__icon2">
+                                    </div>
+                                    <div class="product-card1__slider swiper">
+                                        <div class="product-card1__wrapper swiper-wrapper">
+                                            <div class="product-card1__slide swiper-slide image-big">
+                                                <img loading="lazy" src="img/products/image15.webp" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__pagination pagination"></div>
+                                </div>
+                                <div class="product-card1__item">
+                                    <div class="product-card1__heading">
+                                        <div class="product-card1__top">
+                                            <div data-rating data-rating-size="5" data-rating-value="3" class="rating">
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__titles">
+                                            <a href="./" class="product-card1__title">
+                                                Название продукта может быть в 2 строки
+                                            </a>
+                                            <div class="product-card1__subtitle">
+                                                MISSA <span>Perfect color</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product-card1__bottoms">
+                                        <div class="product-card1__prices">
+                                            <div class="product-card1__old-price">2700 ₽ </div>
+                                            <div class="product-card1__price">1400 ₽ </div>
+                                        </div>
+                                        <div class="product-card1__bottom">
+                                            <div data-quantity class="quantity">
+                                                <button data-quantity-plus type="button"
+                                                    class="quantity__button quantity__button_plus">
+                                                    <svg aria-hidden="true" width="9" height="9">
+                                                        <use xlink:href="img/sprite.svg#plus"></use>
+                                                    </svg>
+                                                </button>
+                                                <div class="quantity__input">
+                                                    <input data-quantity-value autocomplete="off" type="text"
+                                                        name="form[]" value="1">
+                                                </div>
+                                                <button data-quantity-minus type="button"
+                                                    class="quantity__button quantity__button_minus">
+                                                    <svg aria-hidden="true" width="9" height="2">
+                                                        <use xlink:href="img/sprite.svg#minus"></use>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <button type="button" class="btn">
+                                                <span>В корзину</span>
+                                                <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% include 'blocks/pagging.njk' %}
+                    </div>
+                </div>
+            </div>
+
+            {% include 'blocks/forms.njk' %}
+
+        </main>
+        {% include 'blocks/footer.njk' %}
+    </div>
+    {% include 'blocks/popups.njk' %}
+    {% include 'blocks/scripts.njk' %}
+</body>
+
+</html>
