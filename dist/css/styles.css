@@ -5470,6 +5470,7 @@ a {
 }
 @media (max-width: 768px) {
   .block-intro-categories1 .block-intro-banner__pic1 {
+    width: 100%;
     max-width: 100%;
     left: 0px;
     -webkit-transform: translate(0, 0);
