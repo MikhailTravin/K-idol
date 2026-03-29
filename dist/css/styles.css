@@ -11655,6 +11655,7 @@ a {
 }
 .product-card-descr__column._watcher-view .product-card-descr__title {
   color: #f0bfc6;
+  font-weight: 700;
 }
 .product-card-descr__title {
   font-weight: 400;
