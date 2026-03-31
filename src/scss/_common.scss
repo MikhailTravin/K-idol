@@ -318,6 +318,7 @@ a {
   // .product-card1__price
 
   &__price {
+    font-family: var(--third-family);
     font-weight: 300;
     font-size: 14px;
     line-height: 120%;
@@ -365,6 +366,7 @@ a {
   // .product-card1__old-price
 
   &__old-price {
+    font-family: var(--third-family);
     font-weight: 500;
     font-size: 18px;
     text-decoration: line-through;
@@ -405,7 +407,6 @@ a {
     img {
       height: 19px;
       width: auto;
-      
     }
     &:hover {
       background-color: var(--theme-color-accent3);
@@ -450,6 +451,7 @@ a {
       min-height: 36px;
     }
     &.badge-sale {
+      font-family: var(--third-family);
       min-height: 34px;
       min-width: 50px;
       color: var(--theme-color-accent);
@@ -579,6 +581,7 @@ a {
   }
   // .pagging__item
   &__item {
+    font-family: var(--third-family);
     width: 40px;
     flex: 0 0 40px;
     border-radius: 50%;
@@ -629,7 +632,6 @@ a {
       width: 17px;
       flex: 0 0 17px;
       pointer-events: none;
-      padding: 5px 0px 0px 0px;
     }
 
     // .pagging__item_nav-next

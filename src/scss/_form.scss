@@ -42,6 +42,7 @@
 
     &__input {
         .input {
+            font-family: var(--third-family);
             border: 1px solid transparent;
             width: 100%;
             background: #f5f5f5;
@@ -296,6 +297,7 @@ $starActive: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTciIHZp
     &__input {
         flex: 1 1 auto;
         input {
+            font-family: var(--third-family);
             height: 100%;
             text-align: center;
             width: 100%;
@@ -659,6 +661,7 @@ $starActive: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTciIHZp
         align-items: center;
         margin: 0px 0px 12px 0px;
         span {
+            font-family: var(--third-family);
             flex: 1 1 auto;
             font-weight: 600;
             font-size: 15px;
@@ -721,6 +724,7 @@ $starActive: "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTciIHZp
     color: #000;
 }
 .cell_wrapper {
+    font-family: var(--third-family);
     cursor: pointer;
     display: flex;
     justify-content: center;

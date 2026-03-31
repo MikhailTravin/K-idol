@@ -454,12 +454,15 @@
             &.menu1 {
                 position: absolute;
                 top: 0;
-                left: 100%;
-                width: 290px;
+                left: 100px;
+                height: 100%;
                 padding: 0px 0px 0px 100px;
+                width: 290px;
+                transition:
+                    left 0.3s,
+                    opacity 0.3s;
                 opacity: 0;
                 pointer-events: none;
-                transition: opacity 0.3s;
                 @media (max-width: 1406px) {
                     padding: 0px 0px 0px 50px;
                     width: 250px;
@@ -468,12 +471,15 @@
             &.submenu1 {
                 position: absolute;
                 top: 0;
-                left: 100%;
+                left: 200px;
                 width: 302px;
+                height: 100%;
                 padding: 0px 0px 0px 100px;
+                transition:
+                    left 0.3s,
+                    opacity 0.3s;
                 opacity: 0;
                 pointer-events: none;
-                transition: opacity 0.3s;
                 @media (max-width: 1406px) {
                     padding: 0px 0px 0px 50px;
                     width: 280px;
@@ -509,8 +515,9 @@
                             }
                         }
                         .menu1 {
-                            opacity: 1;
+                            left: 100%;
                             pointer-events: auto;
+                            opacity: 1;
                         }
                     }
                 }
@@ -524,6 +531,7 @@
                         }
                         .submenu1 {
                             opacity: 1;
+                            left: 100%;
                             pointer-events: auto;
                         }
                     }
@@ -536,6 +544,7 @@
 
     &__image {
         flex: 0 0 445px;
+        overflow: hidden;
         @media (max-width: 1300px) {
             flex: 0 1 400px;
         }
@@ -845,6 +854,7 @@
     // .header-cart__col
 
     &__col {
+        font-family: var(--third-family);
         display: flex;
         flex-direction: column;
         font-weight: 700;
@@ -860,6 +870,7 @@
     // .header-cart__price
 
     &__price {
+        font-family: var(--third-family);
         font-weight: 700;
         line-height: 120%;
         font-size: 16px;
@@ -901,6 +912,7 @@
     // .header-cart__total
 
     &__total {
+        font-family: var(--third-family);
         font-weight: 700;
         font-size: 24px;
         line-height: 120%;
