@@ -522,6 +522,11 @@ if (document.querySelector('.block-intro__slider')) {
       prevEl: '.block-intro-arrow-prev',
       nextEl: '.block-intro-arrow-next',
     },
+    breakpoints: {
+      1200: {
+        autoHeight: false,
+      },
+    },
     on: {
       init: function () {
         updateSliderNavPosition();
@@ -662,41 +667,6 @@ if (document.querySelector('.images-product')) {
       prevEl: '.images-product__arrow-prev',
       nextEl: '.images-product__arrow-next',
     },
-  });
-}
-
-//========================================================================================================================================================
-
-const filterSlides = document.querySelectorAll('.block-brands__slide');
-const brandColumns = document.querySelectorAll('.block-brands__column');
-
-if (filterSlides) {
-  function activateFilter(filterValue) {
-    filterSlides.forEach(slide => {
-      slide.classList.remove('active');
-    });
-
-    brandColumns.forEach(column => {
-      column.classList.remove('active');
-    });
-
-    const activeSlide = document.querySelector(`.block-brands__slide[data-filter="${filterValue}"]`);
-    if (activeSlide) {
-      activeSlide.classList.add('active');
-    }
-
-    const activeColumn = document.querySelector(`.block-brands__column[data-filter="${filterValue}"]`);
-    if (activeColumn) {
-      activeColumn.classList.add('active');
-    }
-  }
-
-  filterSlides.forEach(slide => {
-    slide.addEventListener('click', function () {
-      const filterValue = this.getAttribute('data-filter');
-
-      activateFilter(filterValue);
-    });
   });
 }
 
