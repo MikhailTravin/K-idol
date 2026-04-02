@@ -16,6 +16,10 @@
 }
 .arrow-prev {
     cursor: pointer;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     svg {
         transform: rotate(-180deg);
         fill: var(--theme-color-accent);
@@ -28,6 +32,10 @@
     }
 }
 .arrow-next {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     svg {
         fill: var(--theme-color-accent);
@@ -64,7 +72,7 @@
     }
 }
 
-.swiper-pagination-lock{
+.swiper-pagination-lock {
     display: none;
 }
 .swiper-button-lock {

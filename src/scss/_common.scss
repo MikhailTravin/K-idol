@@ -171,6 +171,7 @@ a {
   display: flex;
   flex-direction: column;
   min-width: 0;
+  z-index: 20;
   &:hover {
     transition: border-radius 0.3s;
     border-radius: 10px 10px 0px 0px;
