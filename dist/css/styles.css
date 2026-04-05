@@ -6391,8 +6391,16 @@ a {
     gap: 30px;
   }
 }
+.block-brands__wrapper {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 @media (max-width: 1200px) {
   .block-brands__wrapper {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     gap: 10px 17px;
@@ -13959,6 +13967,36 @@ a {
 .header-bottom__item.header-catalog {
   position: relative;
 }
+.header-bottom__item.header-catalog .header-catalog__image {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header-bottom__item.header-catalog:hover .header-catalog__image {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+.header-bottom__item.active {
+  /*
+  .header-bottom__link {
+      color: var(--theme-color-accent3);
+      svg {
+          opacity: 1;
+      }
+  }
+  */
+}
+.header-bottom__item.active .header-catalog-menu1:not(.active) {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.header-bottom__item.active .header-catalog-menu1:not(.active).active {
+  opacity: 1;
+  pointer-events: auto;
+}
 .header-bottom__link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13996,6 +14034,14 @@ a {
   opacity: 1;
 }
 
+.header-catalog .header-bottom__link {
+  pointer-events: none;
+}
+@media (max-width: 1100px) {
+  .header-catalog .header-bottom__link {
+    pointer-events: auto;
+  }
+}
 .header-catalog__dropdowm {
   position: fixed;
   left: 0;
@@ -14135,6 +14181,17 @@ a {
   left: 100%;
   pointer-events: auto;
   opacity: 1;
+}
+.header-catalog__menu ul li.header-catalog-menu1.active .menu1 {
+  opacity: 1;
+  pointer-events: auto;
+  left: 100%;
+}
+.header-catalog__menu ul li.header-catalog-menu1.active .header-catalog-link1 {
+  color: var(--theme-color-accent3);
+}
+.header-catalog__menu ul li.header-catalog-menu1.active .header-catalog-link1 svg {
+  fill: var(--theme-color-accent3);
 }
 .header-catalog__menu ul li.header-catalog-menu2:hover .header-catalog-link2 {
   color: var(--theme-color-accent3);

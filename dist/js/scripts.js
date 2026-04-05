@@ -2225,7 +2225,7 @@ const catalogImage = document.querySelector('.header-catalog__image img');
 if (catalogImage) {
   const menuItems = document.querySelectorAll('.header-catalog-menu1, .header-catalog-menu2, .header-catalog-menu3');
   const menuContainer = document.querySelector('ul');
-  const emptyPixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+  //const emptyPixel = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
   let activeItem = null;
   let lastValidImage = null;
   let isAnimating = false;
