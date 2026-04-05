@@ -2719,7 +2719,9 @@
     // .block-brands__wrapper
 
     &__wrapper {
+        justify-content: center;
         @media (max-width: 1200px) {
+            justify-content: start;
             flex-wrap: wrap;
             gap: 10px 17px;
         }
