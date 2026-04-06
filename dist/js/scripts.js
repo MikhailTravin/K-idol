@@ -670,6 +670,53 @@ if (document.querySelector('.images-product')) {
   });
 }
 
+if (document.querySelector('.images-product2')) {
+  const thumbsSwiper2 = new Swiper('.images-product2__thumb', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 3,
+    spaceBetween: 24,
+    speed: 400,
+    preloadImages: true,
+    navigation: {
+      prevEl: '.images-product2__arrow-prev',
+      nextEl: '.images-product2__arrow-next',
+    },
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 53,
+      },
+    },
+  });
+
+  const mainThumbsSwiper2 = new Swiper('.images-product2__slider', {
+    thumbs: {
+      swiper: thumbsSwiper2
+    },
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 400,
+    preloadImages: true,
+  });
+}
+
+if (document.querySelector('.popup-buy-set-recommend__slider')) {
+  const swiperRecommend = new Swiper('.popup-buy-set-recommend__slider', {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 'auto',
+    speed: 400,
+    preloadImages: true,
+    navigation: {
+      prevEl: '.popup-buy-set-recommend__arrow-prev',
+      nextEl: '.popup-buy-set-recommend__arrow-next',
+    },
+  });
+}
+
 //========================================================================================================================================================
 
 const favoritesElements = document.querySelectorAll('.favorites');
