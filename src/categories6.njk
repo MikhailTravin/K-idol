@@ -2,13 +2,1299 @@
 <html lang="ru">
 
 <head>
-    <title>Категории - разное1</title>
+    <title>Категории - разное</title>
     {% include 'blocks/head.njk' %}
 </head>
 
 <body class="preload mp">
     <div class="main-wrapper-outer">
-        {% include 'blocks/header.njk' %}
+        <header class="header">
+            <div class="header__cirlce"></div>
+            <div class="container">
+                <div class="header__content">
+                    <div class="header-top">
+                        <div class="header-top__icon-menu">
+                            <svg aria-hidden="true" width="11" height="11" class="star1">
+                                <use xlink:href="img/sprite.svg#star1"></use>
+                            </svg>
+                            <svg aria-hidden="true" width="11" height="11" class="star2">
+                                <use xlink:href="img/sprite.svg#star1"></use>
+                            </svg>
+                            <svg aria-hidden="true" width="11" height="11" class="star3">
+                                <use xlink:href="img/sprite.svg#star1"></use>
+                            </svg>
+                            <svg aria-hidden="true" width="5" height="5" class="star4">
+                                <use xlink:href="img/sprite.svg#star1"></use>
+                            </svg>
+                            <button type="button" class="icon-menu"><span></span></button>
+                        </div>
+                        <a href="./" class="header-top__logo">
+                            <img src="img/icons/logo1.svg" alt="">
+                        </a>
+                        <div class="header-top__icons">
+                            <button type="button" class="header-top__icon button-search">
+                                <img src="img/icons/search.svg" alt="">
+                            </button>
+                            <button data-popup="#login" type="button" class="header-top__icon">
+                                <img src="img/icons/person.svg" alt="">
+                            </button>
+                            <div class="header-top__icon header-top-cart">
+                                <a href="./">
+                                    <img src="img/icons/cart.svg" alt="">
+                                </a>
+                                <div class="header-cart__dropdown">
+                                    <div class="header-cart__top">
+                                        <div data-simplebar class="header-cart__simplebar">
+                                            <div class="header-cart__tables">
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="header-cart__bottom">
+                                            <button type="button" class="header-cart__remove">
+                                                <svg aria-hidden="true" width="11" height="11">
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                                <span>Очистить корзину</span>
+                                            </button>
+                                            <div class="header-cart__total">
+                                                14900 ₽
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="header-cart__buttons">
+                                        <a href="./" class="btn btn-transparent">
+                                            <span>Перейти в корзину</span>
+                                            <svg aria-hidden="true" width="17" height="17">
+                                                <use xlink:href="img/sprite.svg#star1"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="./" class="btn">
+                                            <span>Оформить заказ</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-bottom">
+                        <a href="./" class="header-bottom__logo">
+                            <img src="img/icons/logo1.svg" alt="">
+                        </a>
+                        <div class="header-bottom__menu">
+                            <div class="header-bottom__close">
+                                <svg aria-hidden="true" width="19" height="19">
+                                    <use xlink:href="img/sprite.svg#close"></use>
+                                </svg>
+                            </div>
+                            <div class="header-bottom__circle"></div>
+                            <ul class="header-bottom__list">
+                                <li class="header-bottom__item header-catalog">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Каталог
+                                    </a>
+                                    <div class="header-catalog__dropdowm">
+                                        <div class="container">
+                                            <div class="header-catalog__content">
+                                                <div class="header-catalog__menu">
+                                                    <ul>
+                                                        <li data-image="img/products/image5.webp" data-id="menu2"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Уход</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" data-image="img/products/image5.webp">
+                                                                        <span>Новинки</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-image="img/image5.webp"
+                                                                    class="header-catalog-menu2">
+                                                                    <a href="./" data-image="img/image5.webp">
+                                                                        <span>Уход для лица</span>
+                                                                        <svg aria-hidden="true" width="17" height="17">
+                                                                            <use xlink:href="img/sprite.svg#star1">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </a>
+                                                                    <ul class="submenu1">
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Все товары</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Очищение</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Тонизирование</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Питание и увлажнение</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Антивозрастной уход</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для кожи вокруг глаз</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Уход для губ</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Крем</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Сыворотка</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Маски</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Патчи</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Пэды</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Пилинги и скрабы</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li data-image="img/image5.webp"
+                                                                    class="header-catalog-menu2">
+                                                                    <a href="./" data-image="img/products/image5.webp">
+                                                                        <span>Уход для тела</span>
+                                                                        <svg aria-hidden="true" width="17" height="17">
+                                                                            <use xlink:href="img/sprite.svg#star1">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </a>
+                                                                    <ul class="submenu1">
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Все товары</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для душа и ванны</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для рук</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для ног</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Скрабы</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Мочалки и губки</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li data-image="img/image5.webp"
+                                                                    class="header-catalog-menu2">
+                                                                    <a href="./">
+                                                                        <span>Солнцезащитные</span>
+                                                                        <svg aria-hidden="true" width="17" height="17">
+                                                                            <use xlink:href="img/sprite.svg#star1">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </a>
+                                                                    <ul class="submenu1">
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Все товары</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/image5.webp" data-id="menu3"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Макияж</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Новинки</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Лицо</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Глаза</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Губы</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Брови</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Аксессуары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Наборы</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/products/image5.webp" data-id="menu4"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Волосы</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Новинки</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Шампуни</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Бальзамы и маски</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Уход</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Наборы</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/image5.webp" data-id="menu5"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Наборы</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Лимитированные боксы</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/products/image5.webp" data-id="menu6"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Разное</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="header-catalog__image">
+                                                    <img src="img/products/image5.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="header-bottom__item">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Бренды
+                                    </a>
+                                </li>
+                                <li class="header-bottom__item">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Новинки
+                                    </a>
+                                </li>
+                                <li class="header-bottom__item">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Уход за лицом
+                                    </a>
+                                </li>
+                                <li class="header-bottom__item">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Макияж
+                                    </a>
+                                </li>
+                                <li class="header-bottom__item active">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Разное
+                                    </a>
+                                    <div class="header-catalog__dropdowm">
+                                        <div class="container">
+                                            <div class="header-catalog__content">
+                                                <div class="header-catalog__menu">
+                                                    <ul>
+                                                        <li data-image="img/products/image5.webp" data-id="menu2"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Уход</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" data-image="img/products/image5.webp">
+                                                                        <span>Новинки</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-image="img/image5.webp"
+                                                                    class="header-catalog-menu2">
+                                                                    <a href="./" data-image="img/image5.webp">
+                                                                        <span>Уход для лица</span>
+                                                                        <svg aria-hidden="true" width="17" height="17">
+                                                                            <use xlink:href="img/sprite.svg#star1">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </a>
+                                                                    <ul class="submenu1">
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Все товары</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Очищение</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Тонизирование</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Питание и увлажнение</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Антивозрастной уход</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для кожи вокруг глаз</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Уход для губ</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Крем</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Сыворотка</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Маски</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Патчи</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Пэды</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Пилинги и скрабы</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li data-image="img/image5.webp"
+                                                                    class="header-catalog-menu2">
+                                                                    <a href="./" data-image="img/products/image5.webp">
+                                                                        <span>Уход для тела</span>
+                                                                        <svg aria-hidden="true" width="17" height="17">
+                                                                            <use xlink:href="img/sprite.svg#star1">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </a>
+                                                                    <ul class="submenu1">
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Все товары</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для душа и ванны</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для рук</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Для ног</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Скрабы</span>
+                                                                            </a>
+                                                                        </li>
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Мочалки и губки</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li data-image="img/image5.webp"
+                                                                    class="header-catalog-menu2">
+                                                                    <a href="./">
+                                                                        <span>Солнцезащитные</span>
+                                                                        <svg aria-hidden="true" width="17" height="17">
+                                                                            <use xlink:href="img/sprite.svg#star1">
+                                                                            </use>
+                                                                        </svg>
+                                                                    </a>
+                                                                    <ul class="submenu1">
+                                                                        <li class="header-catalog-menu3">
+                                                                            <a href="./">
+                                                                                <span>Все товары</span>
+                                                                            </a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/image5.webp" data-id="menu3"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Макияж</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Новинки</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Лицо</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Глаза</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Губы</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Брови</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Аксессуары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Наборы</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/products/image5.webp" data-id="menu4"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Волосы</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Новинки</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Шампуни</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Бальзамы и маски</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Уход</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Наборы</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/image5.webp" data-id="menu5"
+                                                            class="header-catalog-menu1">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Наборы</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Лимитированные боксы</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li data-image="img/products/image5.webp" data-id="menu6"
+                                                            class="header-catalog-menu1 active">
+                                                            <a href="./" class="header-catalog-link1">
+                                                                <span>Разное</span>
+                                                                <svg aria-hidden="true" width="17" height="17">
+                                                                    <use xlink:href="img/sprite.svg#star1"></use>
+                                                                </svg>
+                                                            </a>
+                                                            <ul class="menu1">
+                                                                <li class="header-catalog-menu2">
+                                                                    <a href="./" class="header-catalog-link2">
+                                                                        <span>Все товары</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="header-catalog__image">
+                                                    <img src="img/products/image5.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="header-bottom__item">
+                                    <a href="./" class="header-bottom__link">
+                                        <svg aria-hidden="true" width="17" height="17">
+                                            <use xlink:href="img/sprite.svg#star1"></use>
+                                        </svg>
+                                        Бьюти-блог
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="socials">
+                                <a href="./">
+                                    <svg aria-hidden="true" width="23" height="15">
+                                        <use xlink:href="img/sprite.svg#vk"></use>
+                                    </svg>
+                                </a>
+                                <a href="./">
+                                    <svg style="margin-right:4px;" aria-hidden="true" width="22" height="18">
+                                        <use xlink:href="img/sprite.svg#telegram"></use>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="header-top__icons">
+                            <button type="button" class="header-top__icon button-search">
+                                <img src="img/icons/search.svg" alt="">
+                            </button>
+                            <button data-popup="#login" type="button" class="header-top__icon">
+                                <img src="img/icons/person.svg" alt="">
+                            </button>
+                            <div class="header-top__icon header-top-cart">
+                                <a href="./">
+                                    <img src="img/icons/cart.svg" alt="">
+                                </a>
+                                <div class="header-cart__dropdown">
+                                    <div class="header-cart__top">
+                                        <div data-simplebar class="header-cart__simplebar">
+                                            <div class="header-cart__tables">
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="header-cart__table">
+                                                    <a href="./" class="header-cart__image">
+                                                        <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                    </a>
+                                                    <div class="header-cart__body">
+                                                        <div class="header-cart__titles">
+                                                            <a href="./" class="header-cart__title">
+                                                                Двухфазная разглаживающая сыворотка с волюфилином
+                                                                Derma Factory Volufiline 5% Blending Serum
+                                                            </a>
+                                                            <button type="button" class="header-cart__delete">
+                                                                <img loading="lazy" src="img/icons/delete.svg" alt="">
+                                                            </button>
+                                                        </div>
+                                                        <div class="header-cart__descr">
+                                                            <div class="header-cart__col">
+                                                                6800 ₽ x 1
+                                                                <span>Розничная цена</span>
+                                                            </div>
+                                                            <div class="header-cart__price">
+                                                                6800 ₽
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="header-cart__bottom">
+                                            <button type="button" class="header-cart__remove">
+                                                <svg aria-hidden="true" width="11" height="11">
+                                                    <use xlink:href="img/sprite.svg#close"></use>
+                                                </svg>
+                                                <span>Очистить корзину</span>
+                                            </button>
+                                            <div class="header-cart__total">
+                                                14900 ₽
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="header-cart__buttons">
+                                        <a href="./" class="btn btn-transparent">
+                                            <span>Перейти в корзину</span>
+                                            <svg aria-hidden="true" width="17" height="17">
+                                                <use xlink:href="img/sprite.svg#star1"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="./" class="btn">
+                                            <span>Оформить заказ</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-search">
+                <div class="container">
+                    <div class="header-search__content">
+                        <div class="header-search__search">
+                            <div class="search">
+                                <input autocomplete="off" type="text" name="form[]" placeholder="Что мы ищем?">
+                                <div class="search__button">
+                                    <img src="img/icons/search.svg" alt="">
+                                </div>
+                            </div>
+                            <div class="header-search__results">
+                                <button type="button" class="header-search__result">
+                                    <img src="img/icons/search2.svg" alt="">
+                                    <span>Гель для глаз</span>
+                                </button>
+                                <button type="button" class="header-search__result">
+                                    <img src="img/icons/search2.svg" alt="">
+                                    <span>Гель для лица</span>
+                                </button>
+                                <button type="button" class="header-search__result">
+                                    <img src="img/icons/search2.svg" alt="">
+                                    <span>Гель для душа</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="header-search__body">
+                            <div class="header-search__title">Последние результаты поиска</div>
+                            <div class="block-products__cards">
+                                <div class="product-card1">
+                                    <div class="product-card1__images">
+                                        <div class="favorites">
+                                            <img loading="lazy" src="img/icons/heart2.svg" alt=""
+                                                class="favorites__icon1">
+                                            <img loading="lazy" src="img/icons/heart3.svg" alt=""
+                                                class="favorites__icon2">
+                                        </div>
+                                        <div class="product-card1__slider swiper">
+                                            <div class="product-card1__wrapper swiper-wrapper">
+                                                <div class="product-card1__slide swiper-slide image-big">
+                                                    <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__pagination pagination"></div>
+                                    </div>
+                                    <div class="product-card1__item">
+                                        <div class="product-card1__heading">
+                                            <div class="product-card1__top">
+                                                <div data-rating data-rating-size="5" data-rating-value="3"
+                                                    class="rating">
+                                                </div>
+                                            </div>
+                                            <div class="product-card1__titles">
+                                                <a href="./" class="product-card1__title">
+                                                    Название продукта может быть в 2 строки
+                                                </a>
+                                                <div class="product-card1__subtitle">
+                                                    MISSA <span>Perfect color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__bottoms">
+                                            <div class="product-card1__prices">
+                                                <div class="product-card1__old-price">2700 ₽ </div>
+                                                <div class="product-card1__price">1400 ₽ </div>
+                                            </div>
+                                            <div class="product-card1__bottom">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus">
+                                                        <svg aria-hidden="true" width="9" height="9">
+                                                            <use xlink:href="img/sprite.svg#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus">
+                                                        <svg aria-hidden="true" width="9" height="2">
+                                                            <use xlink:href="img/sprite.svg#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="btn">
+                                                    <span>В корзину</span>
+                                                    <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card1">
+                                    <div class="product-card1__images">
+                                        <div class="favorites">
+                                            <img loading="lazy" src="img/icons/heart2.svg" alt=""
+                                                class="favorites__icon1">
+                                            <img loading="lazy" src="img/icons/heart3.svg" alt=""
+                                                class="favorites__icon2">
+                                        </div>
+                                        <div class="product-card1__slider swiper">
+                                            <div class="product-card1__wrapper swiper-wrapper">
+                                                <div class="product-card1__slide swiper-slide image-big">
+                                                    <img loading="lazy" src="img/products/image15.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__pagination pagination"></div>
+                                    </div>
+                                    <div class="product-card1__item">
+                                        <div class="product-card1__heading">
+                                            <div class="product-card1__top">
+                                                <div data-rating data-rating-size="5" data-rating-value="3"
+                                                    class="rating">
+                                                </div>
+                                            </div>
+                                            <div class="product-card1__titles">
+                                                <a href="./" class="product-card1__title">
+                                                    Название продукта может быть в 2 строки
+                                                </a>
+                                                <div class="product-card1__subtitle">
+                                                    MISSA <span>Perfect color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__bottoms">
+                                            <div class="product-card1__prices">
+                                                <div class="product-card1__old-price">2700 ₽ </div>
+                                                <div class="product-card1__price">1400 ₽ </div>
+                                            </div>
+                                            <div class="product-card1__bottom">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus">
+                                                        <svg aria-hidden="true" width="9" height="9">
+                                                            <use xlink:href="img/sprite.svg#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus">
+                                                        <svg aria-hidden="true" width="9" height="2">
+                                                            <use xlink:href="img/sprite.svg#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="btn">
+                                                    <span>В корзину</span>
+                                                    <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card1">
+                                    <div class="product-card1__images">
+                                        <div class="favorites">
+                                            <img loading="lazy" src="img/icons/heart2.svg" alt=""
+                                                class="favorites__icon1">
+                                            <img loading="lazy" src="img/icons/heart3.svg" alt=""
+                                                class="favorites__icon2">
+                                        </div>
+                                        <div class="product-card1__slider swiper">
+                                            <div class="product-card1__wrapper swiper-wrapper">
+                                                <div class="product-card1__slide swiper-slide image-big">
+                                                    <img loading="lazy" src="img/products/image23.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__pagination pagination"></div>
+                                    </div>
+                                    <div class="product-card1__item">
+                                        <div class="product-card1__heading">
+                                            <div class="product-card1__top">
+                                                <div data-rating data-rating-size="5" data-rating-value="3"
+                                                    class="rating">
+                                                </div>
+                                            </div>
+                                            <div class="product-card1__titles">
+                                                <a href="./" class="product-card1__title">
+                                                    Название продукта может быть в 2 строки
+                                                </a>
+                                                <div class="product-card1__subtitle">
+                                                    MISSA <span>Perfect color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__bottoms">
+                                            <div class="product-card1__prices">
+                                                <div class="product-card1__old-price">2700 ₽ </div>
+                                                <div class="product-card1__price">1400 ₽ </div>
+                                            </div>
+                                            <div class="product-card1__bottom">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus">
+                                                        <svg aria-hidden="true" width="9" height="9">
+                                                            <use xlink:href="img/sprite.svg#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus">
+                                                        <svg aria-hidden="true" width="9" height="2">
+                                                            <use xlink:href="img/sprite.svg#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="btn">
+                                                    <span>В корзину</span>
+                                                    <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card1">
+                                    <div class="product-card1__images">
+                                        <div class="favorites">
+                                            <img loading="lazy" src="img/icons/heart2.svg" alt=""
+                                                class="favorites__icon1">
+                                            <img loading="lazy" src="img/icons/heart3.svg" alt=""
+                                                class="favorites__icon2">
+                                        </div>
+                                        <div class="product-card1__slider swiper">
+                                            <div class="product-card1__wrapper swiper-wrapper">
+                                                <div class="product-card1__slide swiper-slide image-big">
+                                                    <img loading="lazy" src="img/products/image18.webp" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__pagination pagination"></div>
+                                    </div>
+                                    <div class="product-card1__item">
+                                        <div class="product-card1__heading">
+                                            <div class="product-card1__top">
+                                                <div data-rating data-rating-size="5" data-rating-value="3"
+                                                    class="rating">
+                                                </div>
+                                            </div>
+                                            <div class="product-card1__titles">
+                                                <a href="./" class="product-card1__title">
+                                                    Название продукта может быть в 2 строки
+                                                </a>
+                                                <div class="product-card1__subtitle">
+                                                    MISSA <span>Perfect color</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="product-card1__bottoms">
+                                            <div class="product-card1__prices">
+                                                <div class="product-card1__old-price">2700 ₽ </div>
+                                                <div class="product-card1__price">1400 ₽ </div>
+                                            </div>
+                                            <div class="product-card1__bottom">
+                                                <div data-quantity class="quantity">
+                                                    <button data-quantity-plus type="button"
+                                                        class="quantity__button quantity__button_plus">
+                                                        <svg aria-hidden="true" width="9" height="9">
+                                                            <use xlink:href="img/sprite.svg#plus"></use>
+                                                        </svg>
+                                                    </button>
+                                                    <div class="quantity__input">
+                                                        <input data-quantity-value autocomplete="off" type="text"
+                                                            name="form[]" value="1">
+                                                    </div>
+                                                    <button data-quantity-minus type="button"
+                                                        class="quantity__button quantity__button_minus">
+                                                        <svg aria-hidden="true" width="9" height="2">
+                                                            <use xlink:href="img/sprite.svg#minus"></use>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <button type="button" class="btn">
+                                                    <span>В корзину</span>
+                                                    <img loading="lazy" src="img/icons/cart.svg" alt="">
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <main class="main">
 
             <div class="block-intro-banner block-intro-categories3 categories6">
@@ -60,816 +1346,13 @@
                                 </svg>
                             </a>
                         </li>
-                        <li>
-                            <a href="#">
-                                Новинки
-                                <svg aria-hidden="true" width="23" height="8">
-                                    <use xlink:href="img/sprite.svg#arrow2"></use>
-                                </svg>
-                            </a>
-                        </li>
-                        <li><span>Уход за лицом</span></li>
+                        <li><span>Разное</span></li>
                     </ul>
                 </div>
             </div>
 
             <div class="block-products">
                 <div class="container">
-                    <div class="block-products-filter">
-                        <div class="block-products-filter__left">
-                            <div class="filter">
-                                <div class="filter__button">
-                                    <img loading="lazy" src="img/icons/filter.svg" alt="" class="filter-icon-desc">
-                                    <img loading="lazy" src="img/icons/filter2.svg" alt="" class="filter-icon-mob">
-                                    <span>Фильтры</span>
-                                </div>
-                                <div class="filter__dropdowm">
-                                    <div class="filter__top">
-                                        <div class="filter__title">
-                                            <img loading="lazy" src="img/icons/filter2.svg" alt="">
-                                            <span>Фильтр</span>
-                                        </div>
-                                        <div class="filter__close">
-                                            <svg aria-hidden="true" width="11" height="11">
-                                                <use xlink:href="img/sprite.svg#close"></use>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                    <div class="filter__body">
-                                        <div class="filter__column filter-column-rating">
-                                            <div class="filter__titles">
-                                                <span>Цена <span class="fw">(от до)</span></span>
-                                            </div>
-                                            <div class="filter-rating">
-                                                <div class="filter-rating__inputs">
-                                                    <div class="filter-rating__input">
-                                                        <input id="price-start" autocomplete="off" type="text"
-                                                            name="form[]" placeholder="123">
-                                                    </div>
-                                                    <div class="filter-rating__input">
-                                                        <input id="price-end" autocomplete="off" type="text"
-                                                            name="form[]" placeholder="12 345">
-                                                    </div>
-                                                </div>
-                                                <div class="filter-rating__range"></div>
-                                            </div>
-                                        </div>
-                                        <div class="filter__column">
-                                            <div class="filter__titles">
-                                                <span>Бренд</span>
-                                                <div class="filter__icon">
-                                                    <svg aria-hidden="true" width="14" height="14">
-                                                        <use xlink:href="img/sprite.svg#star1"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="search">
-                                                <input autocomplete="off" type="text" name="form[]"
-                                                    placeholder="Поиск по брендам">
-                                                <div class="search__button">
-                                                    <img src="img/icons/search.svg" alt="">
-                                                </div>
-                                            </div>
-                                            <div data-simplebar class="filter__simblebar">
-                                                <div class="filter__checkboxes">
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="1"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                ABIB
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="2"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                AHC
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="3"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                Anua
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="4"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                Ayoume
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="5"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                ABIB
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="6"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                AHC
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="7"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                Anua
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="8"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                Ayoume
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="9"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                ABIB
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="10"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                AHC
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="11"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                Anua
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="12"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                Ayoume
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="filter__column">
-                                            <div class="filter__titles">
-                                                <span>Тип продукта</span>
-                                                <div class="filter__icon">
-                                                    <svg aria-hidden="true" width="14" height="14">
-                                                        <use xlink:href="img/sprite.svg#star1"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div data-showmore="items" class="filter__showmore">
-                                                <div data-showmore-content="10" class="filter__showmore-content">
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="1"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                ампулы для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="2"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                бальзам для губ
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="3"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                бьюти-бокс
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="4"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                гель для глаз
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="5"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                гель для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="6"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                гидрофильное масло
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="7"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                крем для глаз
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="8"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                крем для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="9"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                маски для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="10"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                мыло для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="11"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                мыло для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="12"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                мыло для лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <button hidden data-showmore-button type="button" class="filter__more">
-                                                    <span>Показать еще 12 категории</span>
-                                                    <span>Скрыть</span></button>
-                                            </div>
-                                        </div>
-                                        <div class="filter__column">
-                                            <div class="filter__titles">
-                                                <span>Результат</span>
-                                                <div class="filter__icon">
-                                                    <svg aria-hidden="true" width="14" height="14">
-                                                        <use xlink:href="img/sprite.svg#star1"></use>
-                                                    </svg>
-                                                </div>
-                                            </div>
-                                            <div class="filter-search">
-                                                <input autocomplete="off" type="text" name="form[]" placeholder="найти">
-                                            </div>
-                                            <div data-showmore="items" class="filter__showmore">
-                                                <div data-showmore-content="10" class="filter__showmore-content">
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="1"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                восстановление
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="2"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                выравнивание тона
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="3"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                коррекция овала лица
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="4"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                матирование
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="5"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                неровная текстура кожи
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="6"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                от отечности
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="7"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                от темных кругов
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="8"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                отбеливание
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="9"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                отшелушивание
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="10"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                очищение
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="11"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                очищение
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="12"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                очищение
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <button hidden data-showmore-button type="button" class="filter__more">
-                                                    <span>Показать еще 12 категории</span>
-                                                    <span>Скрыть</span></button>
-                                            </div>
-                                        </div>
-                                        <div class="filter__column">
-                                            <div class="filter__titles">
-                                                <span>Для кого</span>
-                                            </div>
-                                            <div data-showmore="items" class="filter__showmore">
-                                                <div data-showmore-content="10" class="filter__showmore-content">
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="1"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                для подростков
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="2"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                женский
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="3"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                мужской
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="4"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                унисекс
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <button hidden data-showmore-button type="button" class="filter__more">
-                                                    <span>Показать еще 12 категории</span>
-                                                    <span>Скрыть</span></button>
-                                            </div>
-                                        </div>
-                                        <div class="filter__column">
-                                            <div class="filter__titles">
-                                                <span>Область применения</span>
-                                            </div>
-                                            <div data-showmore="items" class="filter__showmore">
-                                                <div data-showmore-content="10" class="filter__showmore-content">
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="1"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                глаза
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="2"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                губы
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="3"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                лицо
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="4"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                нос
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                    <label class="checkbox">
-                                                        <input class="checkbox__input" type="checkbox" value="5"
-                                                            name="form[]">
-                                                        <span class="checkbox__label">
-                                                            <span class="checkbox__icon">
-                                                                <svg aria-hidden="true" width="10" height="6">
-                                                                    <use xlink:href="img/sprite.svg#check1"></use>
-                                                                </svg>
-                                                            </span>
-                                                            <span class="checkbox__text">
-                                                                ресницы
-                                                            </span>
-                                                        </span>
-                                                    </label>
-                                                </div>
-                                                <button hidden data-showmore-button type="button" class="filter__more">
-                                                    <span>Показать еще 12 категории</span>
-                                                    <span>Скрыть</span></button>
-                                            </div>
-                                        </div>
-                                        <div class="filter__buttons">
-                                            <button type="button" class="btn btn-apply">
-                                                <span>Применить</span>
-                                                <svg aria-hidden="true" width="17" height="17">
-                                                    <use xlink:href="img/sprite.svg#star1"></use>
-                                                </svg>
-                                            </button>
-                                            <button type="button" class="btn btn-transparent">
-                                                <span>Сбросить фильтр</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-products-filter__sorting">
-                                <div class="block-products-filter__sorting-title">
-                                    Сортировать по:
-                                </div>
-                                <select name="form[]" class="select1">
-                                    <option value="1" selected>Популярности (Убывание)</option>
-                                    <option value="2">Пункт №2</option>
-                                    <option value="3">Пункт №3</option>
-                                    <option value="4">Пункт №4</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="block-products-filter__right">
-                            <div class="block-products-filter__icon active filter-icon-tile">
-                                <svg aria-hidden="true" width="14" height="13">
-                                    <use xlink:href="img/sprite.svg#list1"></use>
-                                </svg>
-                            </div>
-                            <div class="block-products-filter__icon filter-icon-list">
-                                <svg aria-hidden="true" width="14" height="13">
-                                    <use xlink:href="img/sprite.svg#list2"></use>
-                                </svg>
-                            </div>
-                            <div class="block-products-filter__icon filter-icon-table">
-                                <svg aria-hidden="true" width="14" height="13">
-                                    <use xlink:href="img/sprite.svg#list3"></use>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
                     <div class="block-products__content">
                         <div class="block-products__cards">
                             <div class="product-card1">
