@@ -8373,8 +8373,11 @@
 
     &__body {
         display: grid;
-        gap: 29px 18px;
-        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 20px;
+        grid-template-columns: repeat(3, 1fr);
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
         @media (max-width: 650px) {
             grid-template-columns: 1fr;
             gap: 20px;
@@ -8420,16 +8423,21 @@
 
     &__item {
         width: 100%;
+        max-width: 254px;
         backdrop-filter: blur(44px);
-        background: rgba(240, 191, 198, 0.6);
+        background: rgba(238, 239, 218, 0.7);
         position: relative;
-        padding: 29px 20px 28px 39px;
+        padding: 22px 28px 34px 28px;
         border-radius: 20px;
         display: flex;
         flex-direction: column;
-        gap: 17px;
+        gap: 18px;
         @media (max-width: 1200px) {
             padding: 30px 16px 26px 16px;
+        }
+        @media (max-width: 992px) {
+            max-width: 100%;
+            background: rgba(240, 191, 198, 0.7);
         }
         @media (max-width: 768px) {
             gap: 12px;
@@ -8441,18 +8449,27 @@
     &__bottom {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 10px;
         justify-content: space-between;
         align-items: center;
         @media (max-width: 1200px) {
-            flex-direction: column-reverse;
             justify-content: center;
         }
         .btn {
-            flex: 0 1 287px;
-            @media (max-width: 1200px) {
-                flex: 0 1 auto;
-                width: 100%;
+            flex: 0 1 auto;
+            width: 100%;
+            justify-content: space-between;
+            gap: 10px;
+            &.btn-white {
+                color: #000;
+                background-color: #fff;
+                transition: opacity 0.3s;
+                svg {
+                    fill: #000;
+                }
+                &:hover {
+                    opacity: 0.7;
+                }
             }
         }
     }
@@ -8462,8 +8479,8 @@
     &__name {
         font-family: var(--second-family);
         font-weight: 700;
-        font-size: 51px;
-        line-height: 117%;
+        font-size: 24px;
+        line-height: 121%;
         @media (max-width: 1200px) {
             font-size: 32px;
             text-align: center;
@@ -8477,6 +8494,9 @@
 
     &__images {
         display: flex;
+        @media (max-width: 1200px) {
+            justify-content: center;
+        }
         img {
             width: 56px;
             height: 56px;
