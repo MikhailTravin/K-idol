@@ -1123,70 +1123,316 @@
 					<div class="container">
 						<div class="block-product-categories__content">
 							<div class="block-product-categories__title">Товары Barulab SEOUL в нашем магазине</div>
-							<ul>
-								<li>
-									<a href="./">Очищающие средства</a>
-								</li>
-								<li>
-									<a href="./">Отшелушивающие средства</a>
-								</li>
-								<li>
-									<a href="./">Тонизирование</a>
-								</li>
-								<li>
-									<a href="./">Очищающие средства</a>
-								</li>
-								<li>
-									<a href="./">Эссенции</a>
-								</li>
-								<li>
-									<a href="./">Сыворотки и ампулы</a>
-								</li>
-								<li>
-									<a href="./">Увлажняющие средства для лица</a>
-								</li>
-								<li>
-									<a href="./">Солнцезащитные кремы и гели</a>
-								</li>
-								<li>
-									<a href="./">Маски для лица</a>
-								</li>
-								<li>
-									<a href="./">Мисты для тела</a>
-								</li>
-								<li>
-									<a href="./">Увлажняющие средства для тела</a>
-								</li>
-								<li>
-									<a href="./">Хиты</a>
-								</li>
-								<li>
-									<a href="./">Наборы</a>
-								</li>
-								<li>
-									<a href="./">Новинки</a>
-								</li>
-								<li>
-									<a href="./">Новинки</a>
-								</li>
-								<li>
-									<a href="./">Тонеры</a>
-								</li>
-								<li>
-									<a href="./">Новинки</a>
-								</li>
-								<li>
-									<a href="./">Новинки</a>
-								</li>
-								<li>
-									<a href="./">Тонеры</a>
-								</li>
-								<li>
-									<button type="button" class="block-product-categories__button">
-										Еще
-									</button>
-								</li>
-							</ul>
+							<div class="block-products-filter__left">
+								<div class="filter">
+									<div class="filter__button">
+										<img loading="lazy" src="img/icons/filter.svg" alt="" class="filter-icon-desc">
+										<img loading="lazy" src="img/icons/filter2.svg" alt="" class="filter-icon-mob">
+										<span>Фильтры</span>
+									</div>
+									<div class="filter__dropdowm">
+										<div class="filter__top">
+											<div class="filter__title">
+												<img loading="lazy" src="img/icons/filter2.svg" alt="">
+												<span>Фильтр</span>
+											</div>
+											<div class="filter__close">
+												<svg aria-hidden="true" width="11" height="11">
+													<use xlink:href="img/sprite.svg#close"></use>
+												</svg>
+											</div>
+										</div>
+										<div class="filter__body">
+											<div class="filter__column filter-column-rating">
+												<div class="filter__titles">
+													<span>Цена <span class="fw">(от до)</span></span>
+												</div>
+												<div class="filter-rating">
+													<div class="filter-rating__inputs">
+														<div class="filter-rating__input">
+															<input id="price-start" autocomplete="off" type="text" name="form[]" placeholder="123">
+														</div>
+														<div class="filter-rating__input">
+															<input id="price-end" autocomplete="off" type="text" name="form[]" placeholder="12 345">
+														</div>
+													</div>
+													<div class="filter-rating__range"></div>
+												</div>
+											</div>
+											<div class="filter__column">
+												<div class="filter__titles">
+													<span>Тип продукта</span>
+													<div class="filter__icon">
+														<svg aria-hidden="true" width="14" height="14">
+															<use xlink:href="img/sprite.svg#star1"></use>
+														</svg>
+													</div>
+												</div>
+												<div class="filter__showmore">
+													<div class="filter__showmore-content">
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="1" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	все товары
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="2" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	очищение
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="3" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	тонизирование
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="4" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	питание и увлажнение
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="5" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	антивозрастной уход
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="6" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	для кожи вокруг глаз
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="7" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	уход для губ
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="8" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	крем
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="9" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	сыворотка
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="10" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	маски
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="11" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	патчи
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="12" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	пэды
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="13" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	пилинги и скрабы
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="14" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	для рук
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="15" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	для ног
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="16" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	с SPF
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="17" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	наборы
+																</span>
+															</span>
+														</label>
+														<label class="checkbox">
+															<input class="checkbox__input" type="checkbox" value="18" name="form[]">
+															<span class="checkbox__label">
+																<span class="checkbox__icon">
+																	<svg aria-hidden="true" width="10" height="6">
+																		<use xlink:href="img/sprite.svg#check1"></use>
+																	</svg>
+																</span>
+																<span class="checkbox__text">
+																	разное
+																</span>
+															</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											<div class="filter__buttons">
+												<button type="button" class="btn btn-apply">
+													<span>Применить</span>
+													<svg aria-hidden="true" width="17" height="17">
+														<use xlink:href="img/sprite.svg#star1"></use>
+													</svg>
+												</button>
+												<button type="button" class="btn btn-transparent">
+													<span>Сбросить фильтр</span>
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="block-products-filter__sorting">
+									<div class="block-products-filter__sorting-title">
+										Сортировать по:
+									</div>
+									<select name="form[]" class="select1">
+										<option value="1" selected>Популярности (Убывание)</option>
+										<option value="2">Пункт №2</option>
+										<option value="3">Пункт №3</option>
+										<option value="4">Пункт №4</option>
+									</select>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

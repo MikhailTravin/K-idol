@@ -7126,6 +7126,12 @@ a {
     padding: 0px 0px 74px 0px;
   }
 }
+.block-product-categories .block-products-filter__left {
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
 .block-product-categories__content {
   display: -webkit-box;
   display: -ms-flexbox;
