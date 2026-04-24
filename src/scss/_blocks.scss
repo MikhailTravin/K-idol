@@ -3244,6 +3244,10 @@
     @media (max-width: 768px) {
         padding: 0px 0px 74px 0px;
     }
+    .block-products-filter__left{
+        width: 100%;
+        justify-content: space-between;
+    }
     // .block-product-categories__content
 
     &__content {
