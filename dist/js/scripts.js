@@ -531,6 +531,9 @@ if (document.querySelector('.block-intro__slider')) {
       init: function () {
         updateSliderNavPosition();
       },
+      resize: function () {
+        updateSliderNavPosition();
+      }
     },
   });
 
@@ -553,15 +556,20 @@ if (document.querySelector('.block-intro__slider')) {
     sliderNav.style.right = rightPosition + 'px';
   }
 
-  function handleResize() {
-    updateSliderNavPosition();
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
   }
 
-  let resizeTimeout;
-  window.addEventListener('resize', function () {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(handleResize, 100);
-  });
+  const debouncedUpdate = debounce(updateSliderNavPosition, 100);
+  window.addEventListener('resize', debouncedUpdate);
 
   window.addEventListener('load', updateSliderNavPosition);
 
@@ -2291,7 +2299,7 @@ if (catalogImage) {
         catalogImage.style.opacity = '1';
         catalogImage.style.transform = 'translateX(0)';
       } else {
-        catalogImage.src = emptyPixel;
+        //catalogImage.src = emptyPixel;
         catalogImage.style.opacity = '0';
         catalogImage.style.transform = 'translateX(0)';
       }
@@ -2312,7 +2320,7 @@ if (catalogImage) {
         catalogImage.src = lastValidImage;
         catalogImage.style.opacity = '1';
       } else {
-        catalogImage.src = emptyPixel;
+        //catalogImage.src = emptyPixel;
         catalogImage.style.opacity = '0';
       }
 
