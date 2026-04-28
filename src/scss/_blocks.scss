@@ -8454,7 +8454,7 @@
             flex-direction: column-reverse;
         }
         .btn {
-            flex: 0 1 287px;
+            width: 100%;
             justify-content: center;
             position: relative;
             gap: 10px;
@@ -8481,6 +8481,19 @@
                     opacity: 0.7;
                 }
             }
+        }
+    }
+
+    // .block-beaty__buttons
+
+    &__buttons {
+        flex: 0 1 287px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        @media (max-width: 1200px) {
+            flex: 1 1 auto;
+            width: 100%;
         }
     }
 
