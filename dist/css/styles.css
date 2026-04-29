@@ -2737,6 +2737,7 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   height: auto;
+  min-height: 450px;
 }
 @media (max-width: 768px) {
   .block-intro__slide {
